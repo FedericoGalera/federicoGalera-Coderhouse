@@ -55,9 +55,11 @@ header nav {
     max-width: 1200px; /* Ancho máximo para el contenido de la navegación */
     margin: 0 auto; /* Centra la navegación */
     flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    /* Por defecto, en pantallas grandes, el logo está a la izquierda. */
+    flex-direction: row; /* Logo a la izquierda, menú a la derecha */
 }
 
-header nav a.logo img { /* Selector más específico para el logo del header */
+header nav a img {
     width: 120px; /* Tamaño del logo */
     height: auto;
     display: block; /* Elimina espacio extra debajo de la imagen */
@@ -69,6 +71,9 @@ header nav ul {
     list-style: none; /* Quita los puntos de la lista */
     padding: 0;
     margin: 0;
+    /* Por defecto, en pantallas grandes, el menú es horizontal */
+    flex-direction: row;
+    align-items: center; /* Centra los items del menú verticalmente */
 }
 
 header nav ul li a {
@@ -79,6 +84,7 @@ header nav ul li a {
     padding: 0.5rem 1rem;
     transition: color var(--transition-speed) ease, background-color var(--transition-speed) ease; /* Transición suave al hover */
     border-radius: var(--border-radius-base);
+    display: block; /* Para que el padding funcione correctamente */
 }
 
 header nav ul li a:hover,
@@ -293,6 +299,65 @@ footer h2 {
 
 /* --- Media Queries para Responsive Design --- */
 
+/* Celulares (hasta 767px) */
+@media (max-width: 767px) {
+    header nav {
+        flex-direction: row-reverse; /* ¡Mueve el logo a la derecha! */
+        justify-content: space-between; /* Mantiene el espacio entre logo y menú */
+        align-items: flex-start; /* Alinea arriba para acomodar el menú vertical */
+        flex-wrap: wrap; /* Asegura que los elementos se envuelvan */
+    }
+
+    header nav a img {
+        width: 100px; /* Logo un poco más pequeño en móviles */
+    }
+
+    header nav ul {
+        flex-direction: column; /* Apila los elementos del menú verticalmente */
+        width: 100%; /* El menú ocupa todo el ancho */
+        text-align: center; /* Centra el texto de los enlaces */
+        margin-top: 1rem; /* Espacio entre el logo/título y el menú */
+        gap: 0.5rem; /* Espacio más reducido entre los ítems apilados */
+    }
+
+    header nav ul li {
+        width: 100%; /* Cada item del menú ocupa el ancho completo */
+        padding: 0.2rem 0; /* Un poco de padding vertical */
+    }
+
+    header nav ul li a {
+        padding: 0.7rem 0.5rem; /* Ajusta el padding para enlaces en menú vertical */
+        border-radius: 0.5rem;
+    }
+
+    header nav ul li a:hover,
+    header nav ul li a:focus {
+        background-color: rgba(255, 255, 255, 0.08); /* Fondo sutil al pasar el mouse */
+    }
+
+    main {
+        padding: var(--padding-base) 0.5rem; /* Reduce un poco el padding lateral en móviles */
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    main section p {
+        font-size: 1rem;
+    }
+
+    .formulario-contacto form {
+        max-width: 100%; /* El formulario puede ser más ancho en móviles */
+        padding: 0 0.5rem; /* Padding interno para el formulario */
+    }
+}
+
+
 /* Tabletas (768px y más) */
 @media (min-width: 768px) {
     h1 {
@@ -322,6 +387,13 @@ footer h2 {
 
     header nav {
         flex-wrap: nowrap; /* Evita que el menú se envuelva tan pronto */
+        flex-direction: row; /* Asegura que el logo esté a la izquierda en tabletas */
+    }
+
+    header nav ul {
+        flex-direction: row; /* Menú horizontal en tabletas */
+        width: auto;
+        margin-top: 0;
     }
 
     .carousel-item iframe {
