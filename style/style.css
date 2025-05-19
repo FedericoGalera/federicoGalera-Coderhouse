@@ -6,59 +6,133 @@
     --color-3: #339988;
     --color-4: #000933;
     --color-5: #ffffff;
-  }
+}
 
 /* Fuente */
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* Box Model General */
+body, header, nav, ul, li, a, main, section, footer, h1, h2, p, img, video {
+    box-sizing: border-box; /* Incluye padding y border en el width y height */
+    margin: 0; /* Reset de márgenes por defecto */
+    padding: 0; /* Reset de paddings por defecto */
+}
+
 /* Header */
 
-header{
+header {
     background: linear-gradient(#000933, #297aa3);
     border-radius: 35px 35px 35px 35px;
-    -webkit-border-radius: 35px 35px 35px 35px;
-    -moz-border-radius: 35px 35px 35px 35px;
+    display: flex; /* Activa Flexbox para el header */
+    justify-content: space-between; /* Espacio entre logo y navegación */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 15px 20px; /* Añade padding interno */
 }
 
-h1{
-
-    text-shadow: 4px 4px 2px rgba(255,255,255,0.6);
-
+.site-title { /* Asumiendo que tienes esta clase en tu <p> de Feyoox */
+    font-size: 1.5em; /* Ajusta el tamaño de la fuente */
+    color: var(--color-5);
+    margin-right: 20px; /* Espacio a la derecha del título */
 }
 
-nav a{
-    text-decoration: none;
-    color: #ffffff;
+nav {
+    display: flex; /* Activa Flexbox para la navegación */
 }
 
-li{
+nav ul {
+    display: flex; /* Activa Flexbox para la lista de navegación */
     list-style: none;
 }
 
-header img{
+nav li {
+    margin-left: 20px; /* Espacio entre los elementos de la lista */
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-5);
+    padding: 8px 12px; /* Añade padding a los enlaces */
+    border-radius: 5px; /* Opcional: bordes redondeados para los enlaces */
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Un ligero fondo al pasar el mouse */
+}
+
+header img {
     width: 150px;
+    height: auto; /* Mantiene la proporción */
+}
+
+h1 {
+    text-shadow: 4px 4px 2px rgba(255,255,255,0.6);
+    text-align: center; /* Centra el título principal */
+    margin-bottom: 20px; /* Espacio debajo del título */
 }
 
 /* Body */
 
-body{
+body {
     background-image: url(../media/fondo.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: #ffffff;
+    color: var(--color-5);
+    padding: 20px; /* Añade un padding general al cuerpo */
+}
+
+/* Main */
+
+main {
+    display: grid; /* Activa Grid para el contenido principal */
+    grid-template-columns: 1fr; /* Una sola columna por defecto */
+    gap: 20px; /* Espacio entre las secciones del main */
+    max-width: 960px; /* Ancho máximo del contenido principal */
+    margin: 0 auto; /* Centra el main horizontalmente */
+}
+
+.presentation, .video-container { /* Estilos para tus secciones dentro de main */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para mejor legibilidad */
+    border-radius: 10px;
+}
+
+.video-container video {
+    display: block; /* Evita espacio extra debajo del video */
+    max-width: 100%; /* Hace que el video sea responsivo */
+    height: auto;
 }
 
 /* Footer */
 
-footer{
-    background: linear-gradient(#297aa3, #000933);
+footer {
+    background: linear-gradient(var(--color-1), var(--color-4));
     border-radius: 35px 35px 35px 35px;
-    -webkit-border-radius: 35px 35px 35px 35px;
-    -moz-border-radius: 35px 35px 35px 35px;
+    padding: 20px;
+    display: flex; /* Activa Flexbox para el footer */
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center; /* Centra horizontalmente los elementos */
+    gap: 15px; /* Espacio entre los elementos internos */
 }
 
-footer img{
+footer h2 {
+    color: var(--color-5);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.social-links {
+    display: flex; /* Alinea los logos horizontalmente */
+    gap: 10px;
+}
+
+.social-links a {
+    display: block; /* Para poder aplicar padding si fuera necesario */
+}
+
+footer img {
     width: 50px;
+    height: auto;
+    display: block; /* Evita espacio extra debajo de la imagen */
 }
