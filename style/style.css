@@ -1,142 +1,411 @@
 /* Paleta de Colores */
+
 :root {
-  --color-1: #297aa3;
-  --color-2: #331f47;
-  --color-3: #339988;
-  --color-4: #000933;
-  --color-5: #ffffff;
+    --color-1: #297aa3; /* Azul medio */
+    --color-2: #331f47; /* Púrpura oscuro */
+    --color-3: #339988; /* Verde azulado */
+    --color-4: #000933; /* Azul muy oscuro / casi negro */
+    --color-5: #ffffff; /* Blanco */
+    --padding-base: 1rem;
+    --margin-base: 1rem;
+    --border-radius-base: 0.75rem; /* 12px */
+    --transition-speed: 0.3s;
 }
 
 /* Fuente */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto&display=swap');
 
-/* Reset y Box Model */
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+/* Reseteo y Box Model Universal */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
+/* Body */
 body {
-  background-image: url(../media/fondo.png);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  font-family: 'Roboto', sans-serif;
-  color: var(--color-5);
-  line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+    background-image: url(../media/fondo.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+    font-family: 'Roboto', sans-serif; /* Fuente principal */
+    color: var(--color-5); /* Color de texto blanco */
+    line-height: 1.6; /* Espaciado entre líneas para mejor lectura */
+    min-height: 100vh; /* Asegura que el body ocupe al menos el alto de la ventana */
+    display: flex;
+    flex-direction: column; /* Organiza los elementos principales en columna */
 }
 
 /* Header */
 header {
-  background: linear-gradient(var(--color-4), var(--color-1));
-  border-radius: 35px;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+    background: linear-gradient(to right, var(--color-4), var(--color-1)); /* Gradiente de izquierda a derecha */
+    border-radius: 0 0 var(--border-radius-base) var(--border-radius-base); /* Bordes redondeados solo abajo */
+    padding: var(--padding-base);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para profundidad */
+    position: sticky; /* Sticky header */
+    top: 0;
+    z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
 }
 
-header img {
-  width: 150px;
-  max-width: 100%;
+header nav {
+    display: flex; /* Usa Flexbox para alinear el logo y el menú */
+    justify-content: space-between; /* Espacia el logo y el menú */
+    align-items: center; /* Centra verticalmente los elementos */
+    max-width: 1200px; /* Ancho máximo para el contenido de la navegación */
+    margin: 0 auto; /* Centra la navegación */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+
+header nav a.logo img { /* Selector más específico para el logo del header */
+    width: 120px; /* Tamaño del logo */
+    height: auto;
+    display: block; /* Elimina espacio extra debajo de la imagen */
+}
+
+header nav ul {
+    display: flex; /* Usa Flexbox para los elementos del menú */
+    gap: 1.5rem; /* Espacio entre los ítems del menú */
+    list-style: none; /* Quita los puntos de la lista */
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: var(--color-5);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    transition: color var(--transition-speed) ease, background-color var(--transition-speed) ease; /* Transición suave al hover */
+    border-radius: var(--border-radius-base);
+}
+
+header nav ul li a:hover,
+header nav ul li a:focus {
+    color: var(--color-3); /* Cambia color al pasar el mouse */
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo sutil al pasar el mouse */
+}
+
+/* Main Content */
+main {
+    flex-grow: 1; /* Permite que el contenido principal ocupe el espacio disponible */
+    padding: var(--padding-base);
+    max-width: 1200px;
+    margin: 2rem auto; /* Margen superior e inferior y centrado horizontalmente */
+    display: grid; /* Usa CSS Grid para organizar las secciones principales */
+    gap: 2rem; /* Espacio entre las secciones */
+    grid-template-columns: 1fr; /* Una columna por defecto */
+}
+
+h1, h2 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    color: var(--color-5);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5); /* Sombra del texto más sutil y oscura */
+    margin-bottom: 1.5rem; /* Espacio debajo de los títulos */
 }
 
 h1 {
-  font-size: 2rem;
-  text-shadow: 4px 4px 2px rgba(255, 255, 255, 0.6);
+    font-size: 2.5rem; /* Tamaño de fuente adaptable */
 }
 
-nav {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+h2 {
+    font-size: 2rem; /* Tamaño de fuente adaptable */
 }
 
-nav a {
-  text-decoration: none;
-  color: var(--color-5);
-  font-weight: bold;
-  transition: color 0.3s;
+/* Estilo general para secciones dentro de main */
+main section {
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente para las secciones */
+    border-radius: var(--border-radius-base);
+    padding: calc(var(--padding-base) * 1.5); /* Más padding para el contenido de las secciones */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    display: flex; /* Por defecto Flexbox para el contenido interno si es necesario */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-nav a:hover {
-  color: var(--color-3);
+main section p {
+    font-size: 1.1rem;
+    max-width: 800px; /* Ancho máximo para párrafos en secciones */
+    margin: 0 auto 1rem auto; /* Margen inferior para separar del siguiente elemento */
 }
 
-ul {
-  display: flex;
-  gap: 1rem;
+/* Index.html - Específicos */
+.video-presentacion video {
+    max-width: 100%; /* El video no excederá el ancho de su contenedor */
+    height: auto; /* Mantiene la proporción del video */
+    border-radius: var(--border-radius-base);
+    display: block; /* Elimina espacio extra */
+    margin-top: 1.5rem; /* Espacio superior para el video */
 }
 
-li {
-  list-style: none;
+/* Contacto.html - Específicos */
+.formulario-contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Espacio entre los elementos del formulario */
+    max-width: 500px; /* Ancho máximo del formulario */
+    width: 100%; /* Ocupa todo el ancho disponible hasta el max-width */
+    margin-top: 1rem;
 }
 
-/* Main Layout */
-main {
-  flex: 1;
-  padding: 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+.formulario-contacto label {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-align: left; /* Alinea las etiquetas a la izquierda */
+    color: var(--color-3);
 }
+
+.formulario-contacto input[type="text"],
+.formulario-contacto input[type="email"],
+.formulario-contacto textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-1);
+    border-radius: var(--border-radius-base);
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo claro semi-transparente */
+    color: var(--color-5);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    transition: border-color var(--transition-speed) ease, background-color var(--transition-speed) ease;
+}
+
+.formulario-contacto input[type="text"]::placeholder,
+.formulario-contacto input[type="email"]::placeholder,
+.formulario-contacto textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.formulario-contacto input[type="text"]:focus,
+.formulario-contacto input[type="email"]:focus,
+.formulario-contacto textarea:focus {
+    outline: none;
+    border-color: var(--color-3); /* Borde resaltado al enfocar */
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.formulario-contacto textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 120px;
+}
+
+.formulario-contacto input[type="submit"] {
+    background-color: var(--color-3); /* Color de botón llamativo */
+    color: var(--color-4); /* Texto oscuro para contraste */
+    padding: 0.85rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius-base);
+    cursor: pointer;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+    margin-top: 1rem;
+}
+
+.formulario-contacto input[type="submit"]:hover {
+    background-color: var(--color-1); /* Cambio de color al pasar el mouse */
+    transform: translateY(-2px); /* Pequeño efecto de elevación */
+}
+
+/* Mejores Momentos.html - Específicos */
+.streams-destacados,
+.clips-destacados {
+    margin-bottom: 2rem; /* Espacio entre las secciones de videos */
+}
+
+/* El Bootstrap CSS se carga en Mejores Momentos, este estilo es para el iframe dentro del carrusel */
+.carousel-item iframe {
+    display: block; 
+    margin: 0 auto; 
+    max-width: 100%; /* Asegura que el iframe sea responsive */
+    height: 250px; /* Altura por defecto para móviles */
+    aspect-ratio: 16 / 9; /* Mantiene la proporción 16:9 si el alto es flexible */
+    border-radius: var(--border-radius-base);
+}
+
+/* Sobreescribir estilos de Bootstrap para los controles del carrusel si es necesario (ej: para que sean visibles) */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo para los iconos de control */
+    border-radius: 50%;
+    padding: 1rem;
+    transition: background-color var(--transition-speed) ease;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Nuestra-Musica.html - Específicos */
+.musica-fefe,
+.musica-yoox {
+    margin-bottom: 2rem; /* Espacio entre las secciones de música */
+}
+
+.musica-fefe iframe,
+.musica-yoox iframe {
+    width: 100%;
+    height: 352px; /* Spotify define una altura fija, se puede mantener */
+    border-radius: var(--border-radius-base);
+}
+
 
 /* Footer */
 footer {
-  background: linear-gradient(var(--color-1), var(--color-4));
-  border-radius: 35px;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+    background: linear-gradient(to right, var(--color-1), var(--color-4)); /* Gradiente de izquierda a derecha */
+    border-radius: var(--border-radius-base) var(--border-radius-base) 0 0; /* Bordes redondeados solo arriba */
+    padding: var(--padding-base);
+    text-align: center;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3); /* Sombra para profundidad */
+    margin-top: 2rem; /* Margen superior para separarlo del contenido principal */
 }
 
-footer img {
-  width: 50px;
-  max-width: 100%;
+footer h2 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    color: var(--color-5);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
-  header, footer {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav {
-    flex-direction: column;
-    gap: 0.5rem;
+.redes-sociales-footer {
+    display: flex; /* Usa Flexbox para los íconos de redes sociales */
+    justify-content: center; /* Centra los íconos horizontalmente */
+    gap: 1.5rem; /* Espacio entre los íconos */
     margin-top: 1rem;
-  }
-
-  main {
-    grid-template-columns: 1fr;
-    padding: 1rem;
-  }
-
-  h1 {
-    font-size: 1.5rem;
-    margin-top: 1rem;
-  }
 }
 
-@media (max-width: 480px) {
-  header img {
-    width: 100px;
-  }
+.redes-sociales-footer img {
+    width: 45px; /* Tamaño de los íconos */
+    height: 45px;
+    transition: transform var(--transition-speed) ease; /* Efecto de escala al pasar el mouse */
+}
 
-  footer img {
-    width: 40px;
-  }
+.redes-sociales-footer img:hover {
+    transform: scale(1.1); /* Agranda ligeramente el ícono al pasar el mouse */
+}
 
-  nav a {
-    font-size: 0.9rem;
-  }
+/* --- Media Queries para Responsive Design --- */
+
+/* Tabletas (768px y más) */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    /* main en Index.html */
+    main:has(.presentacion, .video-presentacion) { /* Solo aplica si main contiene estas secciones */
+        grid-template-columns: 1fr 1fr; /* Dos columnas para main en tabletas */
+    }
+
+    .presentacion {
+        grid-column: 1 / 2; /* Ocupa la primera columna */
+    }
+
+    .video-presentacion {
+        grid-column: 2 / 3; /* Ocupa la segunda columna */
+    }
+
+    main:has(.presentacion, .video-presentacion) h1 {
+        grid-column: 1 / -1; /* El título ocupa todas las columnas en Index.html */
+    }
+
+    header nav {
+        flex-wrap: nowrap; /* Evita que el menú se envuelva tan pronto */
+    }
+
+    .carousel-item iframe {
+        height: 315px; /* Altura para el iframe en tabletas */
+    }
+}
+
+/* Escritorio (1024px y más) */
+@media (min-width: 1024px) {
+    header nav ul {
+        gap: 2.5rem; /* Más espacio entre los ítems del menú en escritorio */
+    }
+
+    main {
+        gap: 3rem;
+    }
+
+    h1 {
+        font-size: 4.5rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    main section p {
+        font-size: 1.25rem;
+    }
+
+    .video-presentacion video {
+        width: 640px; /* Tamaño fijo para el video en pantallas grandes */
+        height: 360px; /* Mantener la proporción 16:9 */
+    }
+
+    .carousel-item iframe {
+        width: 560px; /* Ancho fijo para el iframe en escritorio */
+        height: 315px; /* Altura fija para el iframe en escritorio */
+    }
+
+    /* Mejores Momentos: Dos columnas para los carruseles */
+    main:has(.streams-destacados, .clips-destacados) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    main:has(.streams-destacados, .clips-destacados) h1 {
+        grid-column: 1 / -1;
+    }
+
+    .streams-destacados {
+        grid-column: 1 / 2;
+    }
+
+    .clips-destacados {
+        grid-column: 2 / 3;
+    }
+
+    /* Nuestra Música: Dos columnas para las playlists */
+    main:has(.musica-fefe, .musica-yoox) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    main:has(.musica-fefe, .musica-yoox) h2 {
+        grid-column: 1 / -1; /* H2 de "Escucha nuestra música preferida" */
+    }
+    
+    main:has(.musica-fefe, .musica-yoox) .musica-intro {
+        grid-column: 1 / -1; /* La intro de música ocupa todo el ancho */
+    }
+
+    .musica-fefe {
+        grid-column: 1 / 2;
+    }
+    .musica-yoox {
+        grid-column: 2 / 3;
+    }
+}
+
+/* Desktop Grande (1440px y más) */
+@media (min-width: 1440px) {
+    header nav,
+    main,
+    footer .redes-sociales-footer {
+        max-width: 1400px; /* Aumenta el ancho máximo para pantallas muy grandes */
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
