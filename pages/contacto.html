@@ -10,69 +10,61 @@
 
 <!--Encabezado de la Web-->
 
-<header>
-    
-    <h1>Feyoox</h1>
+    <header>
+        <p class="titulo">Feyoox</p>
+        <nav>
 
-    <nav>
     <!--Logo va a Index-->
-        <a href="../index.html"><img src="../media/feyoox-logo.png" alt="Logo Feyoox"></a>
+
+            <a href="../index.html"><img src="../media/feyoox-logo.png" alt="Logo Feyoox"></a>
+
     <!--Menu-->
-    <ul>
-    <li><a href="#">Contacto</a></li>
-    
-    <li><a href="mejores-momentos.html">Mejores Momentos</a></li>
-    
-    <li><a href="nuestra-musica.html">Nuestras Playlists</a></li>
-    
-    <li><a href="foro.html">Foro</a></li>
-    </ul>
-    </nav>
-    
+
+            <ul>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="mejores-momentos.html">Mejores Momentos</a></li>
+                <li><a href="nuestra-musica.html">Nuestras Playlists</a></li>
+                <li><a href="foro.html">Foro</a></li>
+            </ul>
+        </nav>
     </header>
 
 <!--Cuerpo de la Web-->
 
-<main>
+ <main>
 
-<h2>Contáctanos! !</h2>
+        <h2>¡Contáctanos!</h2>
 
-<p>Hacenos llegar tus comentarios! que te gustaría que juguemos o que te gustaría que reaccionemos en Stream.
-También podes contactarnos por si quieres hacer una colaboración con nosotros o simplemente hacernos llegar tu critica constructiva, no dudes en escribirnos.
-</p>
+        <p>Hacenos llegar tus comentarios! que te gustaría que juguemos o que te gustaría que reaccionemos en Stream.
+        También podes contactarnos por si quieres hacer una colaboración con nosotros o simplemente hacernos llegar tu critica constructiva, no dudes en escribirnos.</p>
 
 <!--Formulario-->
 
-<section>
+        <section class="formulario-contacto">
+            <form action="">
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="" id="nombre" required placeholder="Tu Nombre">
 
-<form action="">
+                <label for="correo">Mail:</label>
+                <input type="email" name="" id="correo" placeholder="ejemplo@mail.com">
 
-<label for="nombre">Nombre:</label>
-<input type="text" name="" id="nombre" required placeholder="Tu Nombre">
+                <label for="mensaje">Tu Mensaje:</label>
+                <textarea name="" id="mensaje"></textarea>
 
-<label for="correo">Mail:</label>
-<input type="email" name="" id="correo" placeholder="ejemplo@mail.com">
-
-<label for="mensaje">Tu Mensaje:</label>
-<textarea name="" id="mensaje"></textarea>
-
-<input type="submit" value="Enviar">
-
-</form>
-
-</section>
-
-</main>
+                <input type="submit" value="Enviar">
+            </form>
+        </section>
+    </main>
 
 <!--Pie de Pagina-->
 
-<footer>
-
-<h2>Seguinos en nuestras Redes! !</h2>
-<a href="https://www.instagram.com/feyooxs/" target="_blank"><img src="../media/instagram-logo.png" alt="Logo Instagram"></a>
-<a href="https://www.twitch.tv/feyoox" target="_blank"><img src="../media/twitch-logo.png" alt="Logo Twitch"></a>
-    
-</footer>
+    <footer>
+        <h2>¡Seguinos en nuestras Redes!</h2>
+        <div class="social-links">
+            <a href="https://www.instagram.com/feyooxs/" target="_blank"><img src="../media/instagram-logo.png" alt="Logo Instagram"></a>
+            <a href="https://www.twitch.tv/feyoox" target="_blank"><img src="../media/twitch-logo.png" alt="Logo Twitch"></a>
+        </div>
+    </footer>
 
 </body>
 </html>
