@@ -9,17 +9,13 @@
 </head>
 <body>
 
-<!--Encabezado de la Web (Logo va a Index) y Menu-->
-
 <header>
         <nav>
 
     <a class="logo" href="../index.html"><img src="../media/feyoox-logo.png" alt="Logo Feyoox"></a>
 
     <ul>
-            <button class="menu-toggle" aria-label="Abrir menú">
-                &#9776; </button>
-            <ul id="nav-menu"> <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="#">Mejores Momentos</a></li>
                 <li><a href="nuestra-musica.html">Nuestras Playlists</a></li>
                 <li><a href="foro.html">Foro</a></li>
@@ -85,20 +81,6 @@
         </div>
     </footer>
 
-<!--Scripts-->
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navMenu = document.getElementById('nav-menu');
-
-            if (menuToggle && navMenu) {
-                menuToggle.addEventListener('click', function() {
-                    navMenu.classList.toggle('active');
-                });
-            }
-        });
-    </script>
 </body>
 </html>
