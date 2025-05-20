@@ -65,6 +65,18 @@ header nav a img {
     display: block; /* Elimina espacio extra debajo de la imagen */
 }
 
+/* Estilo del botón de menú hamburguesa */
+.menu-toggle {
+    display: none; /* Oculto por defecto en escritorio */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--color-5); /* Blanco */
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001; /* Asegura que esté por encima de otros elementos */
+}
+
 header nav ul {
     display: flex; /* Usa Flexbox para los elementos del menú */
     gap: 1.5rem; /* Espacio entre los ítems del menú */
@@ -302,22 +314,61 @@ footer h2 {
 /* Celulares (hasta 767px) */
 @media (max-width: 767px) {
     header nav {
-        flex-direction: row-reverse; /* ¡Mueve el logo a la derecha! */
-        justify-content: space-between; /* Mantiene el espacio entre logo y menú */
-        align-items: flex-start; /* Alinea arriba para acomodar el menú vertical */
-        flex-wrap: wrap; /* Asegura que los elementos se envuelvan */
+        flex-direction: column; /* Cambiamos a columna para que los elementos se apilen */
+        align-items: center; /* Centramos logo y botón */
+        justify-content: flex-start; /* Alineamos al inicio para que el menú baje */
+        flex-wrap: nowrap; /* Evitamos que se envuelvan */
+        /* Aseguramos que el logo y el botón hamburguesa estén en una fila superior */
+        display: flex; /* Aseguramos Flexbox */
+        padding-bottom: 0; /* Reiniciamos padding para un mejor control */
     }
 
-    header nav a img {
-        width: 100px; /* Logo un poco más pequeño en móviles */
+    header nav > .logo { /* Para controlar el logo en la parte superior */
+        order: 1; /* Establecemos el orden del logo primero */
+        margin-bottom: 1rem; /* Espacio debajo del logo */
+    }
+
+    header nav .menu-toggle {
+        display: block; /* Muestra el botón de hamburguesa en móviles */
+        position: absolute; /* Lo posicionamos para que no afecte el flujo inicial */
+        top: var(--padding-base); /* Ajusta según tu padding del header */
+        right: var(--padding-base); /* Ajusta según tu padding del header */
+        order: 2; /* Establecemos el orden del toggle */
     }
 
     header nav ul {
         flex-direction: column; /* Apila los elementos del menú verticalmente */
         width: 100%; /* El menú ocupa todo el ancho */
         text-align: center; /* Centra el texto de los enlaces */
-        margin-top: 1rem; /* Espacio entre el logo/título y el menú */
+        margin-top: 0; /* Ya no necesitamos este margen aquí */
         gap: 0.5rem; /* Espacio más reducido entre los ítems apilados */
+        background: linear-gradient(to right, var(--color-4), var(--color-1)); /* Fondo del menú */
+        /* Eliminamos position: absolute; para que el menú extienda la navbar */
+        position: relative; /* Lo mantenemos en el flujo del header */
+        top: auto; /* Reiniciamos top */
+        left: auto; /* Reiniciamos left */
+        border-radius: var(--border-radius-base); /* Bordes redondeados */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra */
+        overflow: hidden; /* Oculta el contenido que se desborda */
+        
+        /* Animación: Transición para max-height y opacity */
+        transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        
+        max-height: 0; /* Oculta el menú */
+        opacity: 0; /* Oculta la opacidad */
+        pointer-events: none; /* Evita interacciones cuando está oculto */
+        padding-top: 0; /* Reinicia padding para animación */
+        padding-bottom: 0; /* Reinicia padding para animación */
+    }
+    
+    /* Cuando el menú está activo (visible) */
+    header nav ul.active {
+        display: flex; /* Asegura que el menú se muestre como flex cuando está activo */
+        max-height: 500px; /* Suficientemente grande para mostrar todo el contenido */
+        opacity: 1; /* Muestra el menú con opacidad completa */
+        padding-top: 1rem; /* Añade padding para el contenido */
+        padding-bottom: 1rem; /* Añade un poco de padding al final cuando está abierto */
+        pointer-events: auto; /* Permite interacciones cuando está visible */
     }
 
     header nav ul li {
@@ -394,6 +445,17 @@ footer h2 {
         flex-direction: row; /* Menú horizontal en tabletas */
         width: auto;
         margin-top: 0;
+        display: flex; /* Asegura que esté visible en tabletas */
+        max-height: none; /* Elimina la restricción de altura */
+        position: static; /* Vuelve a la posición normal */
+        box-shadow: none; /* Elimina la sombra */
+        background: none; /* Elimina el fondo */
+        opacity: 1; /* Asegura que la opacidad sea 1 en escritorio */
+        pointer-events: auto; /* Asegura interacciones en escritorio */
+        /* Eliminamos las transiciones que solo queremos en móvil para evitar conflictos */
+        transition: none; 
+        padding-top: 0; /* Reinicia padding para escritorio */
+        padding-bottom: 0; /* Reinicia padding para escritorio */
     }
 
     .carousel-item iframe {

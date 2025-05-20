@@ -8,18 +8,16 @@
 </head>
 <body>
 
-<!--Encabezado de la Web-->
+<!--Encabezado de la Web (Logo va a Index) y Menu-->
 
-    <header>
+<header>
         <nav>
 
-<!--Logo va a Index-->
+<a class="logo" href="#"><img src="./media/feyoox-logo.png" alt="Logo Feyoox"></a>
 
-    <a class="logo" href="#"><img src="./media/feyoox-logo.png" alt="Logo Feyoox"></a>
-
-<!--Menu-->
-
- <ul>
+<button class="menu-toggle" aria-label="Abrir menú">
+                &#9776; </button>
+            <ul id="nav-menu"> 
                 <li><a href="./pages/contacto.html">Contacto</a></li>
                 <li><a href="./pages/mejores-momentos.html">Mejores Momentos</a></li>
                 <li><a href="./pages/nuestra-musica.html">Nuestras Playlists</a></li>
@@ -30,18 +28,18 @@
 
 <!--Cuerpo de la Web-->
 
-    <main>
-        <h1>¿Quiénes son Feyoox?</h1>
+<main>
+        <h1>¿Quiénes somos Feyoox?</h1>
 
 <!--Presentación-->
 
-        <section class="presentacion">
+<section class="presentacion">
             <p>Somos un dúo de streamers con el propósito de crear contenido de jueguitos o de lo que sea, generar entretenimiento y diversión en comunidad para vos y para nosotros. ¡Sumate!</p>
         </section>
 
 <!--Video-->
 
-        <section class="video-presentacion">
+<section class="video-presentacion">
             <video width="340" height="460" controls>
                 <source src="./media/somos-feyoox.mp4" type="video/mp4">
             </video>
@@ -50,12 +48,28 @@
 
 <!--Pie de Pagina-->
 
-    <footer>
+<footer>
         <h2>¡Seguinos en nuestras Redes!</h2>
         <div class="redes-sociales-footer">
             <a href="https://www.instagram.com/feyooxs/" target="_blank"><img src="./media/instagram-logo.png" alt="Logo Instagram"></a>
             <a href="https://www.twitch.tv/feyoox" target="_blank"><img src="./media/twitch-logo.png" alt="Logo Twitch"></a>
         </div>
     </footer>
+
+<!--Scripts-->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.getElementById('nav-menu');
+
+            if (menuToggle && navMenu) {
+                menuToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+
 </body>
 </html>

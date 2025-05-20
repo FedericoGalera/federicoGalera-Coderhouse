@@ -8,18 +8,16 @@
 </head>
 <body>
 
-<!--Encabezado de la Web-->
+<!--Encabezado de la Web (Logo va a Index) y Menu-->
 
-    <header>
+<header>
         <nav>
-
-    <!--Logo va a Index-->
 
     <a class="logo" href="../index.html"><img src="../media/feyoox-logo.png" alt="Logo Feyoox"></a>
 
-    <!--Menu-->
-
-            <ul>
+    <button class="menu-toggle" aria-label="Abrir menú">
+                &#9776; </button>
+            <ul id="nav-menu"> 
                 <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="mejores-momentos.html">Mejores Momentos</a></li>
                 <li><a href="#">Nuestras Playlists</a></li>
@@ -30,7 +28,7 @@
 
 <!--Cuerpo de la Web-->
 
-    <main>
+<main>
         <section class="musica-intro">
             <h2>Escucha nuestra música preferida</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A ullam sit voluptatem quos quae cupiditate iste molestiae ratione? Debitis quaerat ratione suscipit nobis veritatis porro nihil ipsum, iure adipisci eos.</p>
@@ -49,7 +47,7 @@
 
 <!--Pie de Pagina-->
 
-    <footer>
+<footer>
         <h2>¡Seguinos en nuestras Redes!</h2>
         <div class="redes-sociales-footer">
             <a href="https://www.instagram.com/feyooxs/" target="_blank"><img src="../media/instagram-logo.png" alt="Logo Instagram"></a>
@@ -57,5 +55,19 @@
         </div>
     </footer>
 
+<!--Scripts-->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.getElementById('nav-menu');
+
+            if (menuToggle && navMenu) {
+                menuToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                });
+            }
+        });
+    </script>
 </body>
 </html>

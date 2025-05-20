@@ -9,78 +9,97 @@
 </head>
 <body>
 
+<!--Encabezado de la Web (Logo va a Index) y Menu-->
+
 <header>
-        <nav>
+    <nav>
+        <a class="logo" href="../index.html"><img src="../media/feyoox-logo.png" alt="Logo Feyoox"></a>
 
-    <a class="logo" href="../index.html"><img src="../media/feyoox-logo.png" alt="Logo Feyoox"></a>
-
-    <ul>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="#">Mejores Momentos</a></li>
-                <li><a href="nuestra-musica.html">Nuestras Playlists</a></li>
-                <li><a href="foro.html">Foro</a></li>
-            </ul>
-        </nav>
-    </header>
+        <button class="menu-toggle" aria-label="Abrir menú">
+                &#9776; </button>
+        <ul id="nav-menu">
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="#">Mejores Momentos</a></li>
+            <li><a href="nuestra-musica.html">Nuestras Playlists</a></li>
+            <li><a href="foro.html">Foro</a></li>
+        </ul>
+    </nav>
+</header>
     
 <!--Cuerpo de la Web-->
 
 <main>
-        <h1>¡Mira nuestros mejores momentos!</h1>
+    <h1>¡Mira nuestros mejores momentos!</h1>
 
-        <section class="streams-destacados">
-            <h2>Streams Destacados</h2>
-            <div id="carouselStreams" class="carousel slide"> <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/40Wc8l-hAEs?si=UMwUmS4y5IzKx2e_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div class="carousel-item">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/MuR_4If0dE4?si=2gh3NX_ECJDwy2Mu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselStreams" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselStreams" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+    <section class="streams-destacados">
+        <h2>Streams Destacados</h2>
+        <div id="carouselStreams" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/40Wc8l-hAEs?si=UMwUmS4y5IzKx2e_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="carousel-item">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/MuR_4If0dE4?si=2gh3NX_ECJDwy2Mu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
             </div>
-        </section>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselStreams" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselStreams" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
 
-        <section class="clips-destacados">
-            <h2>Clips Destacados</h2>
-            <div id="carouselClips" class="carousel slide"> <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/gBigxKti3qw?si=hn8GSt7jsEtpNIIL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div class="carousel-item">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/jBNm9DebXnw?si=1PTkkoUp3d3Amg8f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselClips" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselClips" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+    <section class="clips-destacados">
+        <h2>Clips Destacados</h2>
+        <div id="carouselClips" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/gBigxKti3qw?si=hn8GSt7jsEtpNIIL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="carousel-item">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/jBNm9DebXnw?si=1PTkkoUp3d3Amg8f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
             </div>
-        </section>
-    </main>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselClips" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselClips" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+</main>
 
 <!--Pie de Pagina-->
 
 <footer>
-        <h2>¡Seguinos en nuestras Redes!</h2>
-        <div class="redes-sociales-footer">
-            <a href="https://www.instagram.com/feyooxs/" target="_blank"><img src="../media/instagram-logo.png" alt="Logo Instagram"></a>
-            <a href="https://www.twitch.tv/feyoox" target="_blank"><img src="../media/twitch-logo.png" alt="Logo Twitch"></a>
-        </div>
-    </footer>
+    <h2>¡Seguinos en nuestras Redes!</h2>
+    <div class="redes-sociales-footer">
+        <a href="https://www.instagram.com/feyooxs/" target="_blank"><img src="../media/instagram-logo.png" alt="Logo Instagram"></a>
+        <a href="https://www.twitch.tv/feyoox" target="_blank"><img src="../media/twitch-logo.png" alt="Logo Twitch"></a>
+    </div>
+</footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<!--Scripts-->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (menuToggle && navMenu) {
+            menuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+        }
+    });
+</script>
 </body>
 </html>
