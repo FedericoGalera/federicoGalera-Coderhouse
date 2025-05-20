@@ -8,7 +8,7 @@
     --color-5: #FFFFFF; /* Blanco Puro */
     --padding-base: 1rem;
     --margin-base: 1rem;
-    --border-radius-base: 0.75rem; /* 12px */
+    --border-radius-base: 0.75rem;
     --transition-speed: 0.3s;
 }
 
