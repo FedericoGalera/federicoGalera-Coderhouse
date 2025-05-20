@@ -1,11 +1,11 @@
 /* Paleta de Colores */
 
 :root {
-    --color-1: #297aa3; /* Azul medio */
-    --color-2: #331f47; /* Púrpura oscuro */
-    --color-3: #339988; /* Verde azulado */
-    --color-4: #000933; /* Azul muy oscuro / casi negro */
-    --color-5: #ffffff; /* Blanco */
+    --color-1: #4A7D9D; /* Azul Principal / Logo */
+    --color-2: #0A1C2C; /* Azul Oscuro / Fondo */
+    --color-3: #6DD5ED; /* Acento / Interactivo */
+    --color-4: #A8DADC; /* Azul Profundo / Textos principales */
+    --color-5: #FFFFFF; /* Blanco Puro / Resalte */
     --padding-base: 1rem;
     --margin-base: 1rem;
     --border-radius-base: 0.75rem; /* 12px */
@@ -30,7 +30,7 @@ body {
     background-attachment: fixed;
     background-size: cover; /* Asegura que la imagen cubra todo el fondo */
     font-family: 'Roboto', sans-serif; /* Fuente principal para el cuerpo del texto */
-    color: var(--color-5); /* Color de texto blanco */
+    color: var(--color-4); /* Color de texto cambiado a azul profundo para mayor armonía */
     line-height: 1.6; /* Espaciado entre líneas para mejor lectura */
     min-height: 100vh; /* Asegura que el body ocupe al menos el alto de la ventana */
     display: flex;
@@ -39,7 +39,7 @@ body {
 
 /* Header */
 header {
-    background: linear-gradient(to right, var(--color-4), var(--color-1)); /* Gradiente de izquierda a derecha */
+    background: linear-gradient(to right, var(--color-2), var(--color-1)); /* Gradiente de izquierda a derecha con nuevos colores */
     border-radius: 0 0 var(--border-radius-base) var(--border-radius-base); /* Bordes redondeados solo abajo */
     padding: var(--padding-base);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para profundidad */
@@ -136,7 +136,7 @@ h1, h2 {
     font-family: 'Montserrat', sans-serif; /* Nueva fuente para todos los títulos */
     font-weight: 700;
     text-align: center;
-    color: var(--color-5);
+    color: var(--color-5); /* Títulos en blanco puro */
     text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6); /* Sombra del texto más pronunciada */
     margin-bottom: 1.8rem; /* Espacio debajo de los títulos */
     letter-spacing: 0.05em; /* Ligeramente más espacio entre letras */
@@ -159,6 +159,7 @@ main section {
     display: flex; /* Por defecto Flexbox para el contenido interno si es necesario */
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* Centra verticalmente el contenido dentro de la sección */
     text-align: center;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transición para efecto hover */
 }
@@ -172,8 +173,21 @@ main section p {
     font-size: 1.15rem; /* Texto un poco más grande */
     max-width: 850px; /* Ancho máximo para párrafos en secciones */
     margin: 0 auto 1.2rem auto; /* Margen inferior para separar del siguiente elemento */
-    color: rgba(255, 255, 255, 0.9); /* Un poco menos de opacidad para el texto del párrafo */
+    color: var(--color-4); /* Párrafo en azul profundo para mejor legibilidad */
+    text-align: center; /* Centra el texto del párrafo */
 }
+
+/* === REGLA GENERAL PARA IMAGEN DE FORO === */
+.contenido-foro img {
+    max-width: 400px; /* Tamaño máximo deseado para escritorio */
+    height: auto;
+    display: block;
+    margin-top: 2rem;
+    opacity: 0.8;
+    margin-left: auto; /* Para centrar la imagen */
+    margin-right: auto; /* Para centrar la imagen */
+}
+/* ======================================= */
 
 /* Index.html - Específicos */
 .video-presentacion video {
@@ -205,7 +219,7 @@ main section p {
     font-weight: 700;
     font-size: 1.15rem; /* Tamaño ligeramente más grande */
     text-align: left; /* Alinea las etiquetas a la izquierda */
-    color: var(--color-3);
+    color: var(--color-3); /* Etiquetas en color de acento */
     margin-bottom: 0.2rem; /* Pequeño margen entre label y input */
 }
 
@@ -218,7 +232,7 @@ main section p {
     border: 1px solid var(--color-1);
     border-radius: var(--border-radius-base);
     background-color: rgba(255, 255, 255, 0.15); /* Fondo claro semi-transparente, un poco más opaco */
-    color: var(--color-5);
+    color: var(--color-5); /* Texto del input en blanco puro */
     font-family: 'Roboto', sans-serif;
     font-size: 1.05rem; /* Fuente ligeramente más grande */
     transition: border-color var(--transition-speed) ease, background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
@@ -238,7 +252,7 @@ main section p {
     outline: none;
     border-color: var(--color-3); /* Borde resaltado al enfocar */
     background-color: rgba(255, 255, 255, 0.2); /* Fondo ligeramente más opaco al enfocar */
-    box-shadow: 0 0 0 3px rgba(51, 153, 136, 0.4); /* Sombra sutil al enfocar */
+    box-shadow: 0 0 0 3px rgba(109, 213, 237, 0.4); /* Sombra sutil al enfocar con color de acento */
 }
 
 .formulario-contacto textarea {
@@ -248,7 +262,7 @@ main section p {
 
 .formulario-contacto input[type="submit"] {
     background-color: var(--color-3); /* Color de botón llamativo */
-    color: var(--color-4); /* Texto oscuro para contraste */
+    color: var(--color-2); /* Texto oscuro para contraste con el acento */
     padding: 1rem 2rem; /* Más padding para el botón */
     border: none;
     border-radius: var(--border-radius-base);
@@ -275,8 +289,8 @@ main section p {
 
 /* El Bootstrap CSS se carga en Mejores Momentos, este estilo es para el iframe dentro del carrusel */
 .carousel-item iframe {
-    display: block; 
-    margin: 0 auto; 
+    display: block;
+    margin: 0 auto;
     max-width: 100%; /* Asegura que el iframe sea responsive */
     height: 250px; /* Altura por defecto para móviles */
     aspect-ratio: 16 / 9; /* Mantiene la proporción 16:9 si el alto es flexible */
@@ -322,7 +336,7 @@ main section p {
 
 /* Footer */
 footer {
-    background: linear-gradient(to right, var(--color-1), var(--color-4)); /* Gradiente de izquierda a derecha */
+    background: linear-gradient(to right, var(--color-1), var(--color-2)); /* Gradiente de izquierda a derecha con nuevos colores */
     border-radius: var(--border-radius-base) var(--border-radius-base) 0 0; /* Bordes redondeados solo arriba */
     padding: var(--padding-base);
     text-align: center;
@@ -363,26 +377,30 @@ footer h2 {
 
 /* Celulares (hasta 767px) */
 @media (max-width: 767px) {
+    header {
+        padding: 0.75rem var(--padding-base); /* Ajustar el padding vertical para navbar más fina */
+    }
+
     header nav {
-        flex-direction: column; /* Cambiamos a columna para que los elementos se apilen */
-        align-items: center; /* Centramos logo y botón */
-        justify-content: flex-start; /* Alineamos al inicio para que el menú baje */
+        flex-direction: row; /* Cambiar a fila para que logo y botón estén en la misma línea */
+        justify-content: space-between; /* Espacia el logo a la izquierda y el botón a la derecha */
+        align-items: center; /* Centramos logo y botón verticalmente */
         flex-wrap: nowrap; /* Evitamos que se envuelvan */
         display: flex; /* Aseguramos Flexbox */
         padding-bottom: 0;
     }
 
     header nav > .logo {
-        order: 1;
-        margin-bottom: 1rem;
+        order: unset; /* Elimina la sobreescritura de order para que tome la posición por defecto */
+        margin-bottom: 0; /* Elimina el margen inferior que lo empuja hacia abajo */
     }
 
     header nav .menu-toggle {
         display: block; /* Muestra el botón de hamburguesa en móviles */
-        position: absolute;
-        top: var(--padding-base);
-        right: var(--padding-base);
-        order: 2;
+        position: static; /* Cambiar de absolute a static para que ocupe espacio en el flujo normal */
+        top: auto; /* Eliminar la posición fija */
+        right: auto; /* Eliminar la posición fija */
+        order: unset; /* Elimina la sobreescritura de order */
     }
 
     header nav ul {
@@ -391,10 +409,11 @@ footer h2 {
         text-align: center; /* Centra el texto de los enlaces */
         margin-top: 0;
         gap: 0.8rem; /* Espacio más reducido entre los ítems apilados */
-        background: linear-gradient(to right, var(--color-4), var(--color-1)); /* Fondo del menú */
-        position: relative;
-        top: auto;
-        left: auto;
+        background: linear-gradient(to right, var(--color-2), var(--color-1)); /* Fondo del menú con nuevos colores */
+        position: absolute; /* Vuelve a ser absoluto para que flote debajo del header */
+        top: 100%; /* Se posiciona justo debajo del header */
+        left: 0;
+        right: 0;
         border-radius: var(--border-radius-base);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         overflow: hidden;
@@ -405,7 +424,7 @@ footer h2 {
         padding-top: 0;
         padding-bottom: 0;
     }
-    
+
     header nav ul.active {
         display: flex;
         max-height: 500px; /* Suficientemente grande para mostrar todo el contenido */
@@ -444,10 +463,17 @@ footer h2 {
 
     main section {
         padding: calc(var(--padding-base) * 1.5);
+        /* Aseguramos que la sección no se desborde con el padding interno */
+        box-sizing: border-box; /* Asegura que el padding no añada al ancho total */
     }
 
     main section p {
         font-size: 1rem;
+    }
+
+    /* Sobrescribe el max-width para móvil */
+    .contenido-foro img {
+        max-width: 90%; /* Limita el ancho de la imagen al 90% del contenedor */
     }
 
     .formulario-contacto form {
@@ -536,7 +562,7 @@ footer h2 {
         background: none; /* Elimina el fondo */
         opacity: 1; /* Asegura que la opacidad sea 1 en escritorio */
         pointer-events: auto; /* Asegura interacciones en escritorio */
-        transition: none; 
+        transition: none;
         padding-top: 0;
         padding-bottom: 0;
     }
@@ -609,9 +635,9 @@ footer h2 {
     }
 
     main:has(.musica-fefe, .musica-yoox) h2:first-of-type { /* Apunta al primer h2 en main de musica.html */
-        grid-column: 1 / -1; 
+        grid-column: 1 / -1;
     }
-    
+
     main:has(.musica-fefe, .musica-yoox) .musica-intro {
         grid-column: 1 / -1; /* La intro de música ocupa todo el ancho */
     }

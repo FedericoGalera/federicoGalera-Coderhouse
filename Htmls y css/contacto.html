@@ -6,6 +6,7 @@
     <title>Feyoox - Contacto</title>
     <link rel="stylesheet" href="../style/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../media/feyoox-logo.png"> 
 </head>
 <body>
 
@@ -18,7 +19,7 @@
 
     <button class="menu-toggle" aria-label="Abrir menú">
                 &#9776; </button>
-            <ul id="nav-menu"> 
+            <ul id="nav-menu">
                 <li><a href="#">Contacto</a></li>
                 <li><a href="mejores-momentos.html">Mejores Momentos</a></li>
                 <li><a href="nuestra-musica.html">Nuestras Playlists</a></li>
@@ -31,21 +32,27 @@
 <!--Cuerpo de la Web-->
 
 <main>
-
-        <h2>¡Queremos escucharte!</h2>
+    <section class="formulario-contacto-seccion"> <h2>¡Queremos escucharte!</h2>
         <p>Tu opinión es importante para nosotros. ¡Haznos llegar tus sugerencias para futuros juegos, reacciones en stream o cualquier idea que tengas! Si te interesa una colaboración o simplemente deseas compartir una crítica constructiva, no dudes en escribirnos. Estamos aquí para mejorar y crecer contigo.</p>
 
 <!--Formulario-->
 
-<form action="#" method="POST"> <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre" id="nombre" required placeholder="Tu Nombre Completo">
+        <form action="#" method="POST">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre" required placeholder="Tu Nombre Completo">
 
-                <label for="correo">Email:</label>
-                <input type="email" name="correo" id="correo" required placeholder="ejemplo@dominio.com"> <label for="asunto">Asunto:</label>
-                <input type="text" name="asunto" id="asunto" placeholder="Motivo de tu mensaje"> <label for="mensaje">Tu Mensaje:</label>
-                <textarea name="mensaje" id="mensaje" required placeholder="Escribe aquí tu mensaje..."></textarea> <input type="submit" value="Enviar Mensaje"> </form>
-        </section>
-    </main>
+            <label for="correo">Email:</label>
+            <input type="email" name="correo" id="correo" required placeholder="ejemplo@dominio.com">
+
+            <label for="asunto">Asunto:</label>
+            <input type="text" name="asunto" id="asunto" placeholder="Motivo de tu mensaje">
+
+            <label for="mensaje">Tu Mensaje:</label>
+            <textarea name="mensaje" id="mensaje" required placeholder="Escribe aquí tu mensaje..."></textarea>
+
+            <input type="submit" value="Enviar Mensaje">
+        </form>
+    </section> </main>
 
 <!--Pie de Pagina-->
 
