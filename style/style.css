@@ -1,11 +1,11 @@
 /* Paleta de Colores */
 
 :root {
-    --color-1: #4A7D9D; /* Azul Principal / Logo */
-    --color-2: #0A1C2C; /* Azul Oscuro / Fondo */
-    --color-3: #6DD5ED; /* Acento / Interactivo */
-    --color-4: #A8DADC; /* Azul Profundo / Textos principales */
-    --color-5: #FFFFFF; /* Blanco Puro / Resalte */
+    --color-1: #4A7D9D; /* Azul Principal */
+    --color-2: #0A1C2C; /* Azul Oscuro */
+    --color-3: #6DD5ED; /* Acento */
+    --color-4: #A8DADC; /* Azul Profundo */
+    --color-5: #FFFFFF; /* Blanco Puro */
     --padding-base: 1rem;
     --margin-base: 1rem;
     --border-radius-base: 0.75rem; /* 12px */
@@ -119,7 +119,7 @@ header nav ul li a:focus {
     transform: translateY(-3px);
 }
 
-/* Main Content */
+/* Main */
 main {
     flex-grow: 1;
     padding: var(--padding-base);
@@ -175,7 +175,7 @@ main section p {
     text-align: center;
 }
 
-/* === REGLA GENERAL PARA IMAGEN DE FORO === */
+/* Relga para img del foro */
 .contenido-foro img {
     max-width: 400px;
     height: auto;
@@ -185,9 +185,8 @@ main section p {
     margin-left: auto;
     margin-right: auto;
 }
-/* ======================================= */
 
-/* Index.html - Específicos */
+/* Index - Específicos */
 .video-presentacion video {
     max-width: 100%;
     height: auto;
@@ -202,29 +201,29 @@ main section p {
 }
 
 
-/* Contacto.html - Específicos */
+/* Contacto - Específicos */
 /* Ajustes para el formulario */
-.formulario-contacto-seccion { /* Cambiado de .formulario-contacto a .formulario-contacto-seccion para que sea más específico a la sección */
-    padding: calc(var(--padding-base) * 2.5) !important; /* Más padding para la sección del formulario */
+.formulario-contacto-seccion { 
+    padding: calc(var(--padding-base) * 2.5) !important; 
 }
 
 .formulario-contacto-seccion form {
-    display: grid; /* Cambiado a Grid para un control de diseño más avanzado */
-    grid-template-columns: 1fr; /* Una columna por defecto para móviles */
-    gap: 1.5rem; /* Aumentado el espacio entre los elementos del formulario */
-    max-width: 650px; /* Ancho máximo del formulario ligeramente aumentado */
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: 1.5rem; 
+    max-width: 650px; 
     width: 100%;
-    margin-top: 2rem; /* Más margen superior */
+    margin-top: 2rem; 
 }
 
 .formulario-contacto-seccion label {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 1.1rem; /* Ajustado el tamaño de la fuente */
+    font-size: 1.1rem; 
     text-align: left;
     color: var(--color-3);
-    margin-bottom: 0.4rem; /* Un poco más de margen entre label y input */
-    display: block; /* Asegura que la etiqueta esté en su propia línea */
+    margin-bottom: 0.4rem; 
+    display: block; 
 }
 
 .formulario-contacto-seccion input[type="text"],
@@ -232,10 +231,10 @@ main section p {
 .formulario-contacto-seccion input[type="text"][name="asunto"],
 .formulario-contacto-seccion textarea {
     width: 100%;
-    padding: 0.95rem; /* Más padding interno */
+    padding: 0.95rem; 
     border: 1px solid var(--color-1);
     border-radius: var(--border-radius-base);
-    background-color: rgba(255, 255, 255, 0.1); /* Fondo más transparente */
+    background-color: rgba(255, 255, 255, 0.1); 
     color: var(--color-5);
     font-family: 'Roboto', sans-serif;
     font-size: 1.05rem;
@@ -246,7 +245,7 @@ main section p {
 .formulario-contacto-seccion input[type="email"]::placeholder,
 .formulario-contacto-seccion input[type="text"][name="asunto"]::placeholder,
 .formulario-contacto-seccion textarea::placeholder {
-    color: rgba(255, 255, 255, 0.5); /* Placeholder más claro */
+    color: rgba(255, 255, 255, 0.5); 
 }
 
 .formulario-contacto-seccion input[type="text"]:focus,
@@ -255,38 +254,38 @@ main section p {
 .formulario-contacto-seccion textarea:focus {
     outline: none;
     border-color: var(--color-3);
-    background-color: rgba(255, 255, 255, 0.15); /* Fondo ligeramente más opaco al enfocar */
-    box-shadow: 0 0 0 4px rgba(109, 213, 237, 0.3); /* Sombra más grande y suave */
+    background-color: rgba(255, 255, 255, 0.15); 
+    box-shadow: 0 0 0 4px rgba(109, 213, 237, 0.3); /
 }
 
 .formulario-contacto-seccion textarea {
     resize: vertical;
-    min-height: 180px; /* Altura mínima aumentada */
+    min-height: 180px; 
 }
 
 .formulario-contacto-seccion input[type="submit"] {
     background-color: var(--color-3);
     color: var(--color-2);
-    padding: 1rem 2.5rem; /* Más padding para el botón */
+    padding: 1rem 2.5rem; 
     border: none;
     border-radius: var(--border-radius-base);
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 1.3rem; /* Fuente más grande */
+    font-size: 1.3rem; 
     transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
-    margin-top: 2rem; /* Más margen superior para el botón */
-    letter-spacing: 0.05em; /* Más espaciado entre letras */
+    margin-top: 2rem; 
+    letter-spacing: 0.05em;
 }
 
 .formulario-contacto-seccion input[type="submit"]:hover {
     background-color: var(--color-1);
-    transform: translateY(-5px); /* Efecto de elevación más pronunciado */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Sombra más intensa */
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); 
 }
 
 
-/* Mejores Momentos.html - Específicos */
+/* Mejores Momentos - Específicos */
 .streams-destacados,
 .clips-destacados {
     margin-bottom: 2.5rem;
@@ -322,7 +321,7 @@ main section p {
     transform: scale(1.1);
 }
 
-/* Nuestra-Musica.html - Específicos */
+/* Nuestra Musica - Específicos */
 .musica-fefe,
 .musica-yoox {
     margin-bottom: 2.5rem;
@@ -376,9 +375,9 @@ footer h2 {
     filter: brightness(1.2);
 }
 
-/* --- Media Queries para Responsive Design --- */
+/* Media Queries para Responsive */
 
-/* Celulares (hasta 767px) */
+/* Celulares */
 @media (max-width: 767px) {
     header {
         padding: 0.75rem var(--padding-base);
@@ -521,7 +520,7 @@ footer h2 {
 }
 
 
-/* Tabletas (768px y más) */
+/* Tablets */
 @media (min-width: 768px) {
     h1 {
         font-size: 3.5rem;
@@ -575,37 +574,37 @@ footer h2 {
         height: 315px;
     }
 
-    /* Ajustes para el formulario en tabletas */
+    /* Ajustes para el formulario en tablets */
     .formulario-contacto-seccion form {
-        grid-template-columns: 1fr 1fr; /* Dos columnas para los campos de nombre, email, asunto */
+        grid-template-columns: 1fr 1fr; 
     }
 
     .formulario-contacto-seccion label[for="nombre"],
     .formulario-contacto-seccion input[type="text"][name="nombre"] {
-        grid-column: 1 / 2; /* Nombre en la primera columna */
+        grid-column: 1 / 2; 
     }
 
     .formulario-contacto-seccion label[for="correo"],
     .formulario-contacto-seccion input[type="email"] {
-        grid-column: 2 / 3; /* Correo en la segunda columna */
+        grid-column: 2 / 3; 
     }
 
     .formulario-contacto-seccion label[for="asunto"],
     .formulario-contacto-seccion input[type="text"][name="asunto"] {
-        grid-column: 1 / -1; /* Asunto ocupa todo el ancho */
+        grid-column: 1 / -1; 
     }
 
     .formulario-contacto-seccion label[for="mensaje"],
     .formulario-contacto-seccion textarea {
-        grid-column: 1 / -1; /* Mensaje ocupa todo el ancho */
+        grid-column: 1 / -1; 
     }
 
     .formulario-contacto-seccion input[type="submit"] {
-        grid-column: 1 / -1; /* Botón de submit ocupa todo el ancho */
+        grid-column: 1 / -1; 
     }
 }
 
-/* Escritorio (1024px y más) */
+/* Desktop */
 @media (min-width: 1024px) {
     header nav ul {
         gap: 2.5rem;
@@ -679,19 +678,19 @@ footer h2 {
         grid-column: 2 / 3;
     }
 
-    /* Ajustes para el formulario en escritorio */
+    /* Ajustes para el formulario en desktop */
     .formulario-contacto-seccion form {
-        grid-template-columns: 1fr 1fr; /* Mantiene 2 columnas en escritorio */
-        gap: 2rem; /* Más espacio entre los elementos */
+        grid-template-columns: 1fr 1fr; 
+        gap: 2rem; 
     }
 
     .formulario-contacto-seccion input[type="submit"] {
-        padding: 1.1rem 3rem; /* Más padding para el botón */
-        font-size: 1.4rem; /* Fuente más grande */
+        padding: 1.1rem 3rem; 
+        font-size: 1.4rem; 
     }
 }
 
-/* Desktop Grande (1440px y más) */
+/* Desktop Grande */
 @media (min-width: 1440px) {
     header nav,
     main,
@@ -700,30 +699,6 @@ footer h2 {
         margin-left: auto;
         margin-right: auto;
     }
-}
-
-
-/* Botón "Volver Arriba" */
-.back-to-top {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    color: var(--color-2);
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
-    line-height: 50px;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
-    z-index: 1000;
-}
-
-.back-to-top:hover {
-    background-color: var(--color-1) !important;
-    transform: translateY(-5px);
-    opacity: 0.9;
 }
 
 @media (max-width: 767px) {
