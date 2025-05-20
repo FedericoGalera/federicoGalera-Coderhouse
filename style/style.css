@@ -177,6 +177,18 @@ main section p {
     text-align: center; /* Centra el texto del párrafo */
 }
 
+/* === REGLA GENERAL PARA IMAGEN DE FORO === */
+.contenido-foro img {
+    max-width: 400px; /* Tamaño máximo deseado para escritorio */
+    height: auto;
+    display: block;
+    margin-top: 2rem;
+    opacity: 0.8;
+    margin-left: auto; /* Para centrar la imagen */
+    margin-right: auto; /* Para centrar la imagen */
+}
+/* ======================================= */
+
 /* Index.html - Específicos */
 .video-presentacion video {
     max-width: 100%; /* El video no excederá el ancho de su contenedor */
@@ -459,13 +471,9 @@ footer h2 {
         font-size: 1rem;
     }
 
-    /* Agregamos una regla específica para la imagen en el foro */
+    /* Sobrescribe el max-width para móvil */
     .contenido-foro img {
         max-width: 90%; /* Limita el ancho de la imagen al 90% del contenedor */
-        height: auto; /* Mantiene la proporción */
-        display: block; /* Elimina cualquier espacio extra si es inline */
-        margin-left: auto; /* Centra la imagen horizontalmente */
-        margin-right: auto; /* Centra la imagen horizontalmente */
     }
 
     .formulario-contacto form {
