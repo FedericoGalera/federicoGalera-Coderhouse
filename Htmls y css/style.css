@@ -13,8 +13,8 @@
 }
 
 /* Fuente */
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap');
+/* Se mantiene Roboto Condensed y se añade Montserrat para títulos y elementos importantes */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap');
 
 /* Reseteo y Box Model Universal */
 *, *::before, *::after {
@@ -29,7 +29,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover; /* Asegura que la imagen cubra todo el fondo */
-    font-family: 'Roboto', sans-serif; /* Fuente principal */
+    font-family: 'Roboto', sans-serif; /* Fuente principal para el cuerpo del texto */
     color: var(--color-5); /* Color de texto blanco */
     line-height: 1.6; /* Espaciado entre líneas para mejor lectura */
     min-height: 100vh; /* Asegura que el body ocupe al menos el alto de la ventana */
@@ -46,6 +46,7 @@ header {
     position: sticky; /* Sticky header */
     top: 0;
     z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+    width: 100%; /* Asegura que ocupe todo el ancho */
 }
 
 header nav {
@@ -55,14 +56,24 @@ header nav {
     max-width: 1200px; /* Ancho máximo para el contenido de la navegación */
     margin: 0 auto; /* Centra la navegación */
     flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
-    /* Por defecto, en pantallas grandes, el logo está a la izquierda. */
     flex-direction: row; /* Logo a la izquierda, menú a la derecha */
 }
 
-header nav a img {
+header nav a.logo {
+    display: flex; /* Asegura que la imagen sea el único contenido y se pueda centrar si es necesario */
+    align-items: center;
+    justify-content: center;
+}
+
+header nav a.logo img {
     width: 120px; /* Tamaño del logo */
     height: auto;
     display: block; /* Elimina espacio extra debajo de la imagen */
+    transition: transform var(--transition-speed) ease; /* Transición para efecto hover */
+}
+
+header nav a.logo img:hover {
+    transform: scale(1.05); /* Ligeramente más grande al pasar el mouse */
 }
 
 /* Estilo del botón de menú hamburguesa */
@@ -75,6 +86,11 @@ header nav a img {
     cursor: pointer;
     padding: 0.5rem;
     z-index: 1001; /* Asegura que esté por encima de otros elementos */
+    transition: color var(--transition-speed) ease;
+}
+
+.menu-toggle:hover {
+    color: var(--color-3); /* Cambia color al pasar el mouse */
 }
 
 header nav ul {
@@ -83,7 +99,6 @@ header nav ul {
     list-style: none; /* Quita los puntos de la lista */
     padding: 0;
     margin: 0;
-    /* Por defecto, en pantallas grandes, el menú es horizontal */
     flex-direction: row;
     align-items: center; /* Centra los items del menú verticalmente */
 }
@@ -91,10 +106,10 @@ header nav ul {
 header nav ul li a {
     text-decoration: none;
     color: var(--color-5);
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Montserrat', sans-serif; /* Nueva fuente para los enlaces del menú */
     font-weight: 700;
-    padding: 0.5rem 1rem;
-    transition: color var(--transition-speed) ease, background-color var(--transition-speed) ease; /* Transición suave al hover */
+    padding: 0.7rem 1.2rem; /* Aumento del padding para mayor área de clic */
+    transition: color var(--transition-speed) ease, background-color var(--transition-speed) ease, transform var(--transition-speed) ease; /* Transición suave al hover */
     border-radius: var(--border-radius-base);
     display: block; /* Para que el padding funcione correctamente */
 }
@@ -102,7 +117,8 @@ header nav ul li a {
 header nav ul li a:hover,
 header nav ul li a:focus {
     color: var(--color-3); /* Cambia color al pasar el mouse */
-    background-color: rgba(255, 255, 255, 0.1); /* Fondo sutil al pasar el mouse */
+    background-color: rgba(255, 255, 255, 0.15); /* Fondo sutil al pasar el mouse */
+    transform: translateY(-3px); /* Pequeño efecto de elevación */
 }
 
 /* Main Content */
@@ -110,45 +126,53 @@ main {
     flex-grow: 1; /* Permite que el contenido principal ocupe el espacio disponible */
     padding: var(--padding-base);
     max-width: 1200px;
-    margin: 2rem auto; /* Margen superior e inferior y centrado horizontalmente */
+    margin: 2.5rem auto; /* Más margen superior e inferior y centrado horizontalmente */
     display: grid; /* Usa CSS Grid para organizar las secciones principales */
-    gap: 2rem; /* Espacio entre las secciones */
+    gap: 2.5rem; /* Espacio entre las secciones */
     grid-template-columns: 1fr; /* Una columna por defecto */
 }
 
 h1, h2 {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Montserrat', sans-serif; /* Nueva fuente para todos los títulos */
     font-weight: 700;
     text-align: center;
     color: var(--color-5);
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5); /* Sombra del texto más sutil y oscura */
-    margin-bottom: 1.5rem; /* Espacio debajo de los títulos */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6); /* Sombra del texto más pronunciada */
+    margin-bottom: 1.8rem; /* Espacio debajo de los títulos */
+    letter-spacing: 0.05em; /* Ligeramente más espacio entre letras */
 }
 
 h1 {
-    font-size: 2.5rem; /* Tamaño de fuente adaptable */
+    font-size: 2.8rem; /* Tamaño de fuente adaptable */
 }
 
 h2 {
-    font-size: 2rem; /* Tamaño de fuente adaptable */
+    font-size: 2.2rem; /* Tamaño de fuente adaptable */
 }
 
 /* Estilo general para secciones dentro de main */
 main section {
-    background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente para las secciones */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente para las secciones, un poco más opaco */
     border-radius: var(--border-radius-base);
-    padding: calc(var(--padding-base) * 1.5); /* Más padding para el contenido de las secciones */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    padding: calc(var(--padding-base) * 2); /* Más padding para el contenido de las secciones */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Sombra más grande y definida */
     display: flex; /* Por defecto Flexbox para el contenido interno si es necesario */
     flex-direction: column;
     align-items: center;
     text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transición para efecto hover */
+}
+
+main section:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); /* Sombra más intensa al elevarse */
 }
 
 main section p {
-    font-size: 1.1rem;
-    max-width: 800px; /* Ancho máximo para párrafos en secciones */
-    margin: 0 auto 1rem auto; /* Margen inferior para separar del siguiente elemento */
+    font-size: 1.15rem; /* Texto un poco más grande */
+    max-width: 850px; /* Ancho máximo para párrafos en secciones */
+    margin: 0 auto 1.2rem auto; /* Margen inferior para separar del siguiente elemento */
+    color: rgba(255, 255, 255, 0.9); /* Un poco menos de opacidad para el texto del párrafo */
 }
 
 /* Index.html - Específicos */
@@ -157,83 +181,96 @@ main section p {
     height: auto; /* Mantiene la proporción del video */
     border-radius: var(--border-radius-base);
     display: block; /* Elimina espacio extra */
-    margin-top: 1.5rem; /* Espacio superior para el video */
+    margin-top: 1.8rem; /* Espacio superior para el video */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Sombra para el video */
 }
+
+.video-presentacion video::-webkit-media-controls {
+    border-radius: var(--border-radius-base); /* Intentar aplicar border-radius a los controles si es posible */
+}
+
 
 /* Contacto.html - Específicos */
 .formulario-contacto form {
     display: flex;
     flex-direction: column;
-    gap: 1rem; /* Espacio entre los elementos del formulario */
-    max-width: 500px; /* Ancho máximo del formulario */
+    gap: 1.2rem; /* Espacio entre los elementos del formulario */
+    max-width: 550px; /* Ancho máximo del formulario ligeramente aumentado */
     width: 100%; /* Ocupa todo el ancho disponible hasta el max-width */
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 
 .formulario-contacto label {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Montserrat', sans-serif; /* Nueva fuente para las etiquetas */
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1.15rem; /* Tamaño ligeramente más grande */
     text-align: left; /* Alinea las etiquetas a la izquierda */
     color: var(--color-3);
+    margin-bottom: 0.2rem; /* Pequeño margen entre label y input */
 }
 
 .formulario-contacto input[type="text"],
 .formulario-contacto input[type="email"],
+.formulario-contacto input[type="text"][name="asunto"], /* Estilo para el nuevo campo de asunto */
 .formulario-contacto textarea {
     width: 100%;
-    padding: 0.75rem;
+    padding: 0.85rem; /* Más padding interno */
     border: 1px solid var(--color-1);
     border-radius: var(--border-radius-base);
-    background-color: rgba(255, 255, 255, 0.1); /* Fondo claro semi-transparente */
+    background-color: rgba(255, 255, 255, 0.15); /* Fondo claro semi-transparente, un poco más opaco */
     color: var(--color-5);
     font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    transition: border-color var(--transition-speed) ease, background-color var(--transition-speed) ease;
+    font-size: 1.05rem; /* Fuente ligeramente más grande */
+    transition: border-color var(--transition-speed) ease, background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
 }
 
 .formulario-contacto input[type="text"]::placeholder,
 .formulario-contacto input[type="email"]::placeholder,
+.formulario-contacto input[type="text"][name="asunto"]::placeholder,
 .formulario-contacto textarea::placeholder {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.6); /* Placeholder un poco más claro */
 }
 
 .formulario-contacto input[type="text"]:focus,
 .formulario-contacto input[type="email"]:focus,
+.formulario-contacto input[type="text"][name="asunto"]:focus,
 .formulario-contacto textarea:focus {
     outline: none;
     border-color: var(--color-3); /* Borde resaltado al enfocar */
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo ligeramente más opaco al enfocar */
+    box-shadow: 0 0 0 3px rgba(51, 153, 136, 0.4); /* Sombra sutil al enfocar */
 }
 
 .formulario-contacto textarea {
     resize: vertical; /* Permite redimensionar verticalmente */
-    min-height: 120px;
+    min-height: 150px; /* Altura mínima aumentada */
 }
 
 .formulario-contacto input[type="submit"] {
     background-color: var(--color-3); /* Color de botón llamativo */
     color: var(--color-4); /* Texto oscuro para contraste */
-    padding: 0.85rem 1.5rem;
+    padding: 1rem 2rem; /* Más padding para el botón */
     border: none;
     border-radius: var(--border-radius-base);
     cursor: pointer;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Montserrat', sans-serif; /* Nueva fuente para el botón de submit */
     font-weight: 700;
-    font-size: 1.1rem;
-    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
-    margin-top: 1rem;
+    font-size: 1.2rem; /* Fuente más grande */
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    margin-top: 1.5rem; /* Margen superior para el botón */
+    letter-spacing: 0.03em;
 }
 
 .formulario-contacto input[type="submit"]:hover {
     background-color: var(--color-1); /* Cambio de color al pasar el mouse */
-    transform: translateY(-2px); /* Pequeño efecto de elevación */
+    transform: translateY(-3px); /* Efecto de elevación más pronunciado */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Sombra al pasar el mouse */
 }
 
 /* Mejores Momentos.html - Específicos */
 .streams-destacados,
 .clips-destacados {
-    margin-bottom: 2rem; /* Espacio entre las secciones de videos */
+    margin-bottom: 2.5rem; /* Espacio entre las secciones de videos */
 }
 
 /* El Bootstrap CSS se carga en Mejores Momentos, este estilo es para el iframe dentro del carrusel */
@@ -244,33 +281,42 @@ main section p {
     height: 250px; /* Altura por defecto para móviles */
     aspect-ratio: 16 / 9; /* Mantiene la proporción 16:9 si el alto es flexible */
     border-radius: var(--border-radius-base);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Sombra para los videos */
 }
 
-/* Sobreescribir estilos de Bootstrap para los controles del carrusel si es necesario (ej: para que sean visibles) */
+/* Sobreescribir estilos de Bootstrap para los controles del carrusel */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%; /* Menor ancho para los controles */
+}
+
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo para los iconos de control */
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo para los iconos de control, un poco más opaco */
     border-radius: 50%;
     padding: 1rem;
-    transition: background-color var(--transition-speed) ease;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .carousel-control-prev-icon:hover,
 .carousel-control-next-icon:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1); /* Efecto al pasar el mouse */
 }
 
 /* Nuestra-Musica.html - Específicos */
 .musica-fefe,
 .musica-yoox {
-    margin-bottom: 2rem; /* Espacio entre las secciones de música */
+    margin-bottom: 2.5rem; /* Espacio entre las secciones de música */
 }
 
 .musica-fefe iframe,
 .musica-yoox iframe {
     width: 100%;
-    height: 352px; /* Spotify define una altura fija, se puede mantener */
+    height: 380px; /* Altura ligeramente aumentada para los iframes de Spotify */
     border-radius: var(--border-radius-base);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Sombra para los reproductores */
 }
 
 
@@ -281,32 +327,36 @@ footer {
     padding: var(--padding-base);
     text-align: center;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3); /* Sombra para profundidad */
-    margin-top: 2rem; /* Margen superior para separarlo del contenido principal */
+    margin-top: 3rem; /* Margen superior aumentado para separarlo del contenido principal */
+    width: 100%; /* Asegura que ocupe todo el ancho */
 }
 
 footer h2 {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Montserrat', sans-serif; /* Nueva fuente para el título del footer */
     font-weight: 700;
     color: var(--color-5);
-    margin-bottom: 1rem;
-    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+    font-size: 2rem;
+    letter-spacing: 0.04em;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
 
 .redes-sociales-footer {
     display: flex; /* Usa Flexbox para los íconos de redes sociales */
     justify-content: center; /* Centra los íconos horizontalmente */
-    gap: 1.5rem; /* Espacio entre los íconos */
-    margin-top: 1rem;
+    gap: 1.8rem; /* Más espacio entre los íconos */
+    margin-top: 1.2rem;
 }
 
 .redes-sociales-footer img {
-    width: 45px; /* Tamaño de los íconos */
-    height: 45px;
-    transition: transform var(--transition-speed) ease; /* Efecto de escala al pasar el mouse */
+    width: 50px; /* Tamaño de los íconos ligeramente más grande */
+    height: 50px;
+    transition: transform var(--transition-speed) ease, filter var(--transition-speed) ease; /* Efecto de escala y brillo al pasar el mouse */
 }
 
 .redes-sociales-footer img:hover {
-    transform: scale(1.1); /* Agranda ligeramente el ícono al pasar el mouse */
+    transform: scale(1.15); /* Agranda más el ícono al pasar el mouse */
+    filter: brightness(1.2); /* Añade un poco de brillo */
 }
 
 /* --- Media Queries para Responsive Design --- */
@@ -318,84 +368,82 @@ footer h2 {
         align-items: center; /* Centramos logo y botón */
         justify-content: flex-start; /* Alineamos al inicio para que el menú baje */
         flex-wrap: nowrap; /* Evitamos que se envuelvan */
-        /* Aseguramos que el logo y el botón hamburguesa estén en una fila superior */
         display: flex; /* Aseguramos Flexbox */
-        padding-bottom: 0; /* Reiniciamos padding para un mejor control */
+        padding-bottom: 0;
     }
 
-    header nav > .logo { /* Para controlar el logo en la parte superior */
-        order: 1; /* Establecemos el orden del logo primero */
-        margin-bottom: 1rem; /* Espacio debajo del logo */
+    header nav > .logo {
+        order: 1;
+        margin-bottom: 1rem;
     }
 
     header nav .menu-toggle {
         display: block; /* Muestra el botón de hamburguesa en móviles */
-        position: absolute; /* Lo posicionamos para que no afecte el flujo inicial */
-        top: var(--padding-base); /* Ajusta según tu padding del header */
-        right: var(--padding-base); /* Ajusta según tu padding del header */
-        order: 2; /* Establecemos el orden del toggle */
+        position: absolute;
+        top: var(--padding-base);
+        right: var(--padding-base);
+        order: 2;
     }
 
     header nav ul {
         flex-direction: column; /* Apila los elementos del menú verticalmente */
         width: 100%; /* El menú ocupa todo el ancho */
         text-align: center; /* Centra el texto de los enlaces */
-        margin-top: 0; /* Ya no necesitamos este margen aquí */
-        gap: 0.5rem; /* Espacio más reducido entre los ítems apilados */
+        margin-top: 0;
+        gap: 0.8rem; /* Espacio más reducido entre los ítems apilados */
         background: linear-gradient(to right, var(--color-4), var(--color-1)); /* Fondo del menú */
-        /* Eliminamos position: absolute; para que el menú extienda la navbar */
-        position: relative; /* Lo mantenemos en el flujo del header */
-        top: auto; /* Reiniciamos top */
-        left: auto; /* Reiniciamos left */
-        border-radius: var(--border-radius-base); /* Bordes redondeados */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra */
-        overflow: hidden; /* Oculta el contenido que se desborda */
-        
-        /* Animación: Transición para max-height y opacity */
+        position: relative;
+        top: auto;
+        left: auto;
+        border-radius: var(--border-radius-base);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
         transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
-        
         max-height: 0; /* Oculta el menú */
         opacity: 0; /* Oculta la opacidad */
-        pointer-events: none; /* Evita interacciones cuando está oculto */
-        padding-top: 0; /* Reinicia padding para animación */
-        padding-bottom: 0; /* Reinicia padding para animación */
+        pointer-events: none;
+        padding-top: 0;
+        padding-bottom: 0;
     }
     
-    /* Cuando el menú está activo (visible) */
     header nav ul.active {
-        display: flex; /* Asegura que el menú se muestre como flex cuando está activo */
+        display: flex;
         max-height: 500px; /* Suficientemente grande para mostrar todo el contenido */
-        opacity: 1; /* Muestra el menú con opacidad completa */
-        padding-top: 1rem; /* Añade padding para el contenido */
-        padding-bottom: 1rem; /* Añade un poco de padding al final cuando está abierto */
-        pointer-events: auto; /* Permite interacciones cuando está visible */
+        opacity: 1;
+        padding-top: 1.5rem; /* Añade padding para el contenido */
+        padding-bottom: 1.5rem; /* Añade un poco de padding al final cuando está abierto */
+        pointer-events: auto;
     }
 
     header nav ul li {
         width: 100%; /* Cada item del menú ocupa el ancho completo */
-        padding: 0.2rem 0; /* Un poco de padding vertical */
+        padding: 0.3rem 0;
     }
 
     header nav ul li a {
-        padding: 0.7rem 0.5rem; /* Ajusta el padding para enlaces en menú vertical */
+        padding: 0.8rem 0.5rem; /* Ajusta el padding para enlaces en menú vertical */
         border-radius: 0.5rem;
-    }
-
-    header nav ul li a:hover,
-    header nav ul li a:focus {
-        background-color: rgba(255, 255, 255, 0.08); /* Fondo sutil al pasar el mouse */
+        font-size: 1.1rem; /* Fuente más grande para el menú en móviles */
     }
 
     main {
-        padding: var(--padding-base) 0.5rem; /* Reduce un poco el padding lateral en móviles */
+        padding: var(--padding-base) 1rem; /* Reduce un poco el padding lateral en móviles */
+        margin: 2rem auto;
+        gap: 2rem;
     }
 
     h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+        margin-bottom: 1.2rem;
     }
 
     h2 {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    main section {
+        padding: calc(var(--padding-base) * 1.5);
     }
 
     main section p {
@@ -403,8 +451,41 @@ footer h2 {
     }
 
     .formulario-contacto form {
-        max-width: 100%; /* El formulario puede ser más ancho en móviles */
-        padding: 0 0.5rem; /* Padding interno para el formulario */
+        max-width: 100%;
+        padding: 0 0.5rem;
+        gap: 1rem;
+    }
+
+    .formulario-contacto label {
+        font-size: 1.05rem;
+    }
+
+    .formulario-contacto input[type="text"],
+    .formulario-contacto input[type="email"],
+    .formulario-contacto input[type="text"][name="asunto"],
+    .formulario-contacto textarea {
+        padding: 0.7rem;
+        font-size: 1rem;
+    }
+
+    .formulario-contacto input[type="submit"] {
+        padding: 0.9rem 1.5rem;
+        font-size: 1.1rem;
+        margin-top: 1.2rem;
+    }
+
+    footer {
+        margin-top: 2.5rem;
+    }
+
+    footer h2 {
+        font-size: 1.6rem;
+    }
+
+    .redes-sociales-footer img {
+        width: 40px;
+        height: 40px;
+        gap: 1.2rem;
     }
 }
 
@@ -430,6 +511,9 @@ footer h2 {
 
     .video-presentacion {
         grid-column: 2 / 3; /* Ocupa la segunda columna */
+        display: flex; /* Asegurar que el video se centre dentro de su columna */
+        align-items: center;
+        justify-content: center;
     }
 
     main:has(.presentacion, .video-presentacion) h1 {
@@ -452,10 +536,9 @@ footer h2 {
         background: none; /* Elimina el fondo */
         opacity: 1; /* Asegura que la opacidad sea 1 en escritorio */
         pointer-events: auto; /* Asegura interacciones en escritorio */
-        /* Eliminamos las transiciones que solo queremos en móvil para evitar conflictos */
         transition: none; 
-        padding-top: 0; /* Reinicia padding para escritorio */
-        padding-bottom: 0; /* Reinicia padding para escritorio */
+        padding-top: 0;
+        padding-bottom: 0;
     }
 
     .carousel-item iframe {
@@ -512,13 +595,21 @@ footer h2 {
         grid-column: 2 / 3;
     }
 
+    /* Regla añadida para hacer que los títulos h2 en Mejores Momentos se envuelvan */
+    .streams-destacados h2,
+    .clips-destacados h2 {
+        max-width: 250px; /* Ajusta este valor si necesitas que las palabras se corten de forma diferente */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     /* Nuestra Música: Dos columnas para las playlists */
     main:has(.musica-fefe, .musica-yoox) {
         grid-template-columns: 1fr 1fr;
     }
 
-    main:has(.musica-fefe, .musica-yoox) h2 {
-        grid-column: 1 / -1; /* H2 de "Escucha nuestra música preferida" */
+    main:has(.musica-fefe, .musica-yoox) h2:first-of-type { /* Apunta al primer h2 en main de musica.html */
+        grid-column: 1 / -1; 
     }
     
     main:has(.musica-fefe, .musica-yoox) .musica-intro {

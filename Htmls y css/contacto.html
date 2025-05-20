@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feyoox - Contacto</title>
     <link rel="stylesheet" href="../style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -26,46 +27,39 @@
         </nav>
     </header>
 
+
 <!--Cuerpo de la Web-->
 
 <main>
 
-        <h2>¡Contáctanos!</h2>
-
-        <p>Hacenos llegar tus comentarios! que te gustaría que juguemos o que te gustaría que reaccionemos en Stream.
-        También podes contactarnos por si quieres hacer una colaboración con nosotros o simplemente hacernos llegar tu critica constructiva, no dudes en escribirnos.</p>
+        <h2>¡Queremos escucharte!</h2>
+        <p>Tu opinión es importante para nosotros. ¡Haznos llegar tus sugerencias para futuros juegos, reacciones en stream o cualquier idea que tengas! Si te interesa una colaboración o simplemente deseas compartir una crítica constructiva, no dudes en escribirnos. Estamos aquí para mejorar y crecer contigo.</p>
 
 <!--Formulario-->
 
-<section class="formulario-contacto">
-            <form action="">
-                <label for="nombre">Nombre:</label>
-                <input type="text" name="" id="nombre" required placeholder="Tu Nombre">
+<form action="#" method="POST"> <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" required placeholder="Tu Nombre Completo">
 
-                <label for="correo">eMail:</label>
-                <input type="email" name="" id="correo" placeholder="ejemplo@mail.com">
-
-                <label for="mensaje">Tu Mensaje:</label>
-                <textarea name="" id="mensaje"></textarea>
-
-                <input type="submit" value="Enviar">
-            </form>
+                <label for="correo">Email:</label>
+                <input type="email" name="correo" id="correo" required placeholder="ejemplo@dominio.com"> <label for="asunto">Asunto:</label>
+                <input type="text" name="asunto" id="asunto" placeholder="Motivo de tu mensaje"> <label for="mensaje">Tu Mensaje:</label>
+                <textarea name="mensaje" id="mensaje" required placeholder="Escribe aquí tu mensaje..."></textarea> <input type="submit" value="Enviar Mensaje"> </form>
         </section>
     </main>
 
 <!--Pie de Pagina-->
 
 <footer>
-        <h2>¡Seguinos en nuestras Redes!</h2>
+        <h2>¡Conéctate con nosotros!</h2>
         <div class="redes-sociales-footer">
-            <a href="https://www.instagram.com/feyooxs/" target="_blank"><img src="../media/instagram-logo.png" alt="Logo Instagram"></a>
-            <a href="https://www.twitch.tv/feyoox" target="_blank"><img src="../media/twitch-logo.png" alt="Logo Twitch"></a>
+            <a href="https://www.instagram.com/feyooxs/" target="_blank" aria-label="Visita nuestro Instagram"><img src="../media/instagram-logo.png" alt="Logo Instagram"></a>
+            <a href="https://www.twitch.tv/feyoox" target="_blank" aria-label="Síguenos en Twitch"><img src="../media/twitch-logo.png" alt="Logo Twitch"></a>
         </div>
     </footer>
 
 <!--Scripts-->
 
-    <script>
+<script>
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.querySelector('.menu-toggle');
             const navMenu = document.getElementById('nav-menu');
