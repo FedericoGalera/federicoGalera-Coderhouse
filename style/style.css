@@ -159,6 +159,7 @@ main section {
     display: flex; /* Por defecto Flexbox para el contenido interno si es necesario */
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* Centra verticalmente el contenido dentro de la sección */
     text-align: center;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transición para efecto hover */
 }
@@ -173,6 +174,7 @@ main section p {
     max-width: 850px; /* Ancho máximo para párrafos en secciones */
     margin: 0 auto 1.2rem auto; /* Margen inferior para separar del siguiente elemento */
     color: var(--color-4); /* Párrafo en azul profundo para mejor legibilidad */
+    text-align: center; /* Centra el texto del párrafo */
 }
 
 /* Index.html - Específicos */
@@ -193,7 +195,7 @@ main section p {
 /* Contacto.html - Específicos */
 .formulario-contacto form {
     display: flex;
-    flex-direction: column; /* Esto ya apila los elementos uno debajo del otro */
+    flex-direction: column;
     gap: 1.2rem; /* Espacio entre los elementos del formulario */
     max-width: 550px; /* Ancho máximo del formulario ligeramente aumentado */
     width: 100%; /* Ocupa todo el ancho disponible hasta el max-width */
@@ -449,10 +451,21 @@ footer h2 {
 
     main section {
         padding: calc(var(--padding-base) * 1.5);
+        /* Aseguramos que la sección no se desborde con el padding interno */
+        box-sizing: border-box; /* Asegura que el padding no añada al ancho total */
     }
 
     main section p {
         font-size: 1rem;
+    }
+
+    /* Agregamos una regla específica para la imagen en el foro */
+    .contenido-foro img {
+        max-width: 90%; /* Limita el ancho de la imagen al 90% del contenedor */
+        height: auto; /* Mantiene la proporción */
+        display: block; /* Elimina cualquier espacio extra si es inline */
+        margin-left: auto; /* Centra la imagen horizontalmente */
+        margin-right: auto; /* Centra la imagen horizontalmente */
     }
 
     .formulario-contacto form {
