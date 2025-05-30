@@ -1,0 +1,72 @@
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin media-query($breakpoint) {
+    @if $breakpoint == mobile {
+        @media (max-width: $mobile-breakpoint) {
+            @content;
+        }
+    } @else if $breakpoint == tablet {
+        @media (min-width: $tablet-breakpoint) {
+            @content;
+        }
+    } @else if $breakpoint == desktop {
+        @media (min-width: $desktop-breakpoint) {
+            @content;
+        }
+    } @else if $breakpoint == large-desktop {
+        @media (min-width: $large-desktop-breakpoint) {
+            @content;
+        }
+    }
+}
+
+@mixin section-base {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: $border-radius-base;
+    padding: calc($padding-base * 2);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    @include flex-center;
+    flex-direction: column;
+    text-align: center;
+    transition: transform $transition-speed ease-in-out, box-shadow $transition-speed ease-in-out;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    p {
+        font-size: 1.15rem;
+        max-width: 850px;
+        margin: 0 auto 1.2rem auto;
+        color: $color-4;
+        text-align: center;
+    }
+}
+
+@mixin input-field-base {
+    width: 100%;
+    padding: 0.95rem;
+    border: 1px solid $color-1;
+    border-radius: $border-radius-base;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: $color-5;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.05rem;
+    transition: border-color $transition-speed ease, background-color $transition-speed ease, box-shadow $transition-speed ease;
+
+    &::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    &:focus {
+        outline: none;
+        border-color: $color-3;
+        background-color: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 0 0 4px rgba(109, 213, 237, 0.3);
+    }
+}

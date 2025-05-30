@@ -1,0 +1,42 @@
+.video-presentacion {
+    video {
+        max-width: 100%;
+        height: auto;
+        border-radius: $border-radius-base;
+        display: block;
+        margin-top: 1.8rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+
+        &::-webkit-media-controls {
+            border-radius: $border-radius-base;
+        }
+
+        @include media-query(desktop) {
+            width: 640px;
+            height: 360px;
+        }
+    }
+
+    @include media-query(tablet) {
+        grid-column: 2 / 3;
+        @include flex-center;
+    }
+}
+
+main:has(.presentacion, .video-presentacion) {
+    @include media-query(tablet) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    h1 {
+        @include media-query(tablet) {
+            grid-column: 1 / -1;
+        }
+    }
+}
+
+.presentacion {
+    @include media-query(tablet) {
+        grid-column: 1 / 2;
+    }
+}

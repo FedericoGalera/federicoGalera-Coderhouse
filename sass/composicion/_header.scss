@@ -1,0 +1,174 @@
+header {
+    background: linear-gradient(to right, $color-2, $color-1);
+    border-radius: 0 0 $border-radius-base $border-radius-base;
+    padding: $padding-base;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+
+    @include media-query(mobile) {
+        padding: 0.75rem $padding-base;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        flex-direction: row;
+
+        @include media-query(mobile) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: nowrap;
+            display: flex;
+            padding-bottom: 0;
+        }
+
+        @include media-query(tablet) {
+            flex-wrap: nowrap;
+            flex-direction: row;
+        }
+
+        a.logo {
+            @include flex-center;
+
+            @include media-query(mobile) {
+                order: unset;
+                margin-bottom: 0;
+            }
+
+            img {
+                width: 120px;
+                height: auto;
+                display: block;
+                transition: transform $transition-speed ease;
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: $color-5;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+            transition: color $transition-speed ease;
+
+            &:hover {
+                color: $color-3;
+            }
+
+            @include media-query(mobile) {
+                display: block;
+                position: static;
+                top: auto;
+                right: auto;
+                order: unset;
+            }
+        }
+
+        ul {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-direction: row;
+            align-items: center;
+
+            @include media-query(mobile) {
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                margin-top: 0;
+                gap: 0.8rem;
+                background: linear-gradient(to right, $color-2, $color-1);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                border-radius: $border-radius-base;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+                overflow: hidden;
+                transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+                max-height: 0;
+                opacity: 0;
+                pointer-events: none;
+                padding-top: 0;
+                padding-bottom: 0;
+
+                &.active {
+                    display: flex;
+                    max-height: 500px; // Suficiente para contener los elementos
+                    opacity: 1;
+                    padding-top: 1.5rem;
+                    padding-bottom: 1.5rem;
+                    pointer-events: auto;
+                }
+            }
+
+            @include media-query(tablet) {
+                flex-direction: row;
+                width: auto;
+                margin-top: 0;
+                display: flex;
+                max-height: none;
+                position: static;
+                box-shadow: none;
+                background: none;
+                opacity: 1;
+                pointer-events: auto;
+                transition: none;
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+
+            @include media-query(desktop) {
+                gap: 2.5rem;
+            }
+
+            li {
+                @include media-query(mobile) {
+                    width: 100%;
+                    padding: 0.3rem 0;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: $color-5;
+                    font-family: 'Montserrat', sans-serif;
+                    font-weight: 700;
+                    padding: 0.7rem 1.2rem;
+                    transition: color $transition-speed ease, background-color $transition-speed ease, transform $transition-speed ease;
+                    border-radius: $border-radius-base;
+                    display: block;
+
+                    &:hover,
+                    &:focus {
+                        color: $color-3;
+                        background-color: rgba(255, 255, 255, 0.15);
+                        transform: translateY(-3px);
+                    }
+
+                    @include media-query(mobile) {
+                        padding: 0.8rem 0.5rem;
+                        border-radius: 0.5rem;
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+        }
+    }
+}
