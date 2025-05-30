@@ -1,15 +1,15 @@
-@import 'varios/variables';
-@import 'varios/mixins';
-@import 'basicos/universal';
-@import 'basicos/tipografia';
-@import 'composicion/header';
-@import 'composicion/main';
-@import 'composicion/footer';
-@import 'componentes/carrusel';
-@import 'componentes/formulario';
-@import 'paginas/index';
-@import 'paginas/momentos';
-@import 'paginas/musica';
+@use 'varios/variables' as *;
+@use 'varios/mixins' as *;
+@use 'basicos/universal';
+@use 'basicos/tipografia';
+@use 'composicion/header';
+@use 'composicion/main';
+@use 'composicion/footer';
+@use 'componentes/carrusel';
+@use 'componentes/formulario';
+@use 'paginas/index';
+@use 'paginas/momentos';
+@use 'paginas/musica';
 
 @include media-query(large-desktop) {
     header nav,

@@ -1,26 +1,29 @@
+@use '../varios/variables';
+@use '../varios/mixins'; 
+
 footer {
-    background: linear-gradient(to right, $color-1, $color-2);
-    border-radius: $border-radius-base $border-radius-base 0 0;
-    padding: $padding-base;
+    background: linear-gradient(to right, variables.$color-1, variables.$color-2);
+    border-radius: variables.$border-radius-base variables.$border-radius-base 0 0;
+    padding: variables.$padding-base;
     text-align: center;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
     margin-top: 3rem;
     width: 100%;
 
-    @include media-query(mobile) {
+    @include mixins.media-query(mobile) {
         margin-top: 2.5rem;
     }
 
     h2 {
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
-        color: $color-5;
+        color: variables.$color-5;
         margin-bottom: 1.2rem;
         font-size: 2rem;
         letter-spacing: 0.04em;
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 
-        @include media-query(mobile) {
+        @include mixins.media-query(mobile) {
             font-size: 1.6rem;
         }
     }
@@ -31,11 +34,11 @@ footer {
         gap: 1.8rem;
         margin-top: 1.2rem;
 
-        @include media-query(mobile) {
+        @include mixins.media-query(mobile) {
             gap: 1.2rem;
         }
 
-        @include media-query(large-desktop) {
+        @include mixins.media-query(large-desktop) {
             max-width: 50px;
             margin-left: auto;
             margin-right: auto;
@@ -44,14 +47,14 @@ footer {
         img {
             width: 50px;
             height: 50px;
-            transition: transform $transition-speed ease, filter $transition-speed ease;
+            transition: transform variables.$transition-speed ease, filter variables.$transition-speed ease;
 
             &:hover {
                 transform: scale(1.15);
                 filter: brightness(1.2);
             }
 
-            @include media-query(mobile) {
+            @include mixins.media-query(mobile) {
                 width: 40px;
                 height: 40px;
             }

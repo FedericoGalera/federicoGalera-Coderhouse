@@ -593,6 +593,48 @@ footer .redes-sociales-footer img:hover {
   }
 }
 
+.streams-destacados,
+.clips-destacados {
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 1024px) {
+  main:has(.streams-destacados, .clips-destacados) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1024px) {
+  main:has(.streams-destacados, .clips-destacados) h1 {
+    grid-column: 1/-1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .streams-destacados {
+    grid-column: 1/2;
+  }
+}
+@media (min-width: 1024px) {
+  .streams-destacados h2 {
+    max-width: 750px;
+    margin-left: center;
+    margin-right: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .clips-destacados {
+    grid-column: 2/3;
+  }
+}
+@media (min-width: 1024px) {
+  .clips-destacados h2 {
+    max-width: 750px;
+    margin-left: center;
+    margin-right: center;
+  }
+}
+
 .musica-fefe,
 .musica-yoox {
   margin-bottom: 2.5rem;

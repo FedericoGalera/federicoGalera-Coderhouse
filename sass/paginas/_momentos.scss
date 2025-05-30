@@ -1,0 +1,47 @@
+@use '../varios/variables';
+@use '../varios/mixins'; 
+
+.streams-destacados,
+.clips-destacados {
+    margin-bottom: 2.5rem;
+}
+
+main:has(.streams-destacados, .clips-destacados) {
+    @include mixins.media-query(desktop) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    h1 {
+        @include mixins.media-query(desktop) {
+            grid-column: 1 / -1;
+        }
+    }
+}
+
+.streams-destacados {
+    @include mixins.media-query(desktop) {
+        grid-column: 1 / 2;
+    }
+
+    h2 {
+        @include mixins.media-query(desktop) {
+            max-width: 750px;
+            margin-left: center;
+            margin-right: center;
+        }
+    }
+}
+
+.clips-destacados {
+    @include mixins.media-query(desktop) {
+        grid-column: 2 / 3;
+    }
+
+    h2 {
+        @include mixins.media-query(desktop) {
+            max-width: 750px;
+            margin-left: center;
+            margin-right: center;
+        }
+    }
+}

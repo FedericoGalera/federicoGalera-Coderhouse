@@ -1,3 +1,5 @@
+@use 'variables';
+
 @mixin flex-center {
     display: flex;
     align-items: center;
@@ -6,19 +8,19 @@
 
 @mixin media-query($breakpoint) {
     @if $breakpoint == mobile {
-        @media (max-width: $mobile-breakpoint) {
+        @media (max-width: variables.$mobile-breakpoint) {
             @content;
         }
     } @else if $breakpoint == tablet {
-        @media (min-width: $tablet-breakpoint) {
+        @media (min-width: variables.$tablet-breakpoint) {
             @content;
         }
     } @else if $breakpoint == desktop {
-        @media (min-width: $desktop-breakpoint) {
+        @media (min-width: variables.$desktop-breakpoint) {
             @content;
         }
     } @else if $breakpoint == large-desktop {
-        @media (min-width: $large-desktop-breakpoint) {
+        @media (min-width: variables.$large-desktop-breakpoint) {
             @content;
         }
     }
@@ -26,13 +28,13 @@
 
 @mixin section-base {
     background-color: rgba(0, 0, 0, 0.7);
-    border-radius: $border-radius-base;
-    padding: calc($padding-base * 2);
+    border-radius: variables.$border-radius-base;
+    padding: calc(variables.$padding-base * 2);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
     @include flex-center;
     flex-direction: column;
     text-align: center;
-    transition: transform $transition-speed ease-in-out, box-shadow $transition-speed ease-in-out;
+    transition: transform variables.$transition-speed ease-in-out, box-shadow variables.$transition-speed ease-in-out;
 
     &:hover {
         transform: translateY(-5px);
@@ -43,7 +45,7 @@
         font-size: 1.15rem;
         max-width: 850px;
         margin: 0 auto 1.2rem auto;
-        color: $color-4;
+        color: variables.$color-4;
         text-align: center;
     }
 }
@@ -51,13 +53,13 @@
 @mixin input-field-base {
     width: 100%;
     padding: 0.95rem;
-    border: 1px solid $color-1;
-    border-radius: $border-radius-base;
+    border: 1px solid variables.$color-1;
+    border-radius: variables.$border-radius-base;
     background-color: rgba(255, 255, 255, 0.1);
-    color: $color-5;
+    color: variables.$color-5;
     font-family: 'Roboto', sans-serif;
     font-size: 1.05rem;
-    transition: border-color $transition-speed ease, background-color $transition-speed ease, box-shadow $transition-speed ease;
+    transition: border-color variables.$transition-speed ease, background-color variables.$transition-speed ease, box-shadow variables.$transition-speed ease;
 
     &::placeholder {
         color: rgba(255, 255, 255, 0.5);
@@ -65,7 +67,7 @@
 
     &:focus {
         outline: none;
-        border-color: $color-3;
+        border-color: variables.$color-3;
         background-color: rgba(255, 255, 255, 0.15);
         box-shadow: 0 0 0 4px rgba(109, 213, 237, 0.3);
     }

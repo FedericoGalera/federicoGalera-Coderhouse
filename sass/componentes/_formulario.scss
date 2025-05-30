@@ -1,5 +1,8 @@
+@use '../varios/variables';
+@use '../varios/mixins'; 
+
 .formulario-contacto-seccion {
-    padding: calc($padding-base * 2.5) !important;
+    padding: calc(variables.$padding-base * 2.5) !important;
 
     form {
         display: grid;
@@ -9,16 +12,16 @@
         width: 100%;
         margin-top: 2rem;
 
-        @include media-query(mobile) {
+        @include mixins.media-query(mobile) {
             gap: 1.2rem;
             padding: 0 0.5rem;
         }
 
-        @include media-query(tablet) {
+        @include mixins.media-query(tablet) {
             grid-template-columns: 1fr 1fr;
         }
 
-        @include media-query(desktop) {
+        @include mixins.media-query(desktop) {
             gap: 2rem;
         }
     }
@@ -28,11 +31,11 @@
         font-weight: 700;
         font-size: 1.1rem;
         text-align: left;
-        color: $color-3;
+        color: variables.$color-3;
         margin-bottom: 0.4rem;
         display: block;
 
-        @include media-query(mobile) {
+        @include mixins.media-query(mobile) {
             font-size: 1rem;
         }
     }
@@ -41,9 +44,9 @@
     input[type="email"],
     input[name="asunto"],
     textarea {
-        @include input-field-base;
+        @include mixins.input-field-base;
 
-        @include media-query(mobile) {
+        @include mixins.media-query(mobile) {
             padding: 0.8rem;
             font-size: 0.95rem;
         }
@@ -53,44 +56,44 @@
         resize: vertical;
         min-height: 180px;
 
-        @include media-query(mobile) {
+        @include mixins.media-query(mobile) {
             min-height: 120px;
         }
     }
 
     input[type="submit"] {
-        background-color: $color-3;
-        color: $color-2;
+        background-color: variables.$color-3;
+        color: variables.$color-2;
         padding: 1rem 2.5rem;
         border: none;
-        border-radius: $border-radius-base;
+        border-radius: variables.$border-radius-base;
         cursor: pointer;
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
         font-size: 1.3rem;
-        transition: background-color $transition-speed ease, transform $transition-speed ease, box-shadow $transition-speed ease;
+        transition: background-color variables.$transition-speed ease, transform variables.$transition-speed ease, box-shadow variables.$transition-speed ease;
         margin-top: 2rem;
         letter-spacing: 0.05em;
 
         &:hover {
-            background-color: $color-1;
+            background-color: variables.$color-1;
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
         }
 
-        @include media-query(mobile) {
+        @include mixins.media-query(mobile) {
             padding: 1rem 2rem;
             font-size: 1.1rem;
             margin-top: 1.5rem;
         }
 
-        @include media-query(desktop) {
+        @include mixins.media-query(desktop) {
             padding: 1.1rem 3rem;
             font-size: 1.4rem;
         }
     }
 
-    @include media-query(tablet) {
+    @include mixins.media-query(tablet) {
         label[for="nombre"],
         input[name="nombre"] {
             grid-column: 1 / 2;

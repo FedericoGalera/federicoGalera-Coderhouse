@@ -1,10 +1,13 @@
+@use '../varios/variables';
+@use '../varios/mixins';
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap');
 
 h1, h2 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     text-align: center;
-    color: $color-5;
+    color: variables.$color-5;
     text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
     margin-bottom: 1.8rem;
     letter-spacing: 0.05em;
@@ -13,16 +16,16 @@ h1, h2 {
 h1 {
     font-size: 2.8rem;
 
-    @include media-query(mobile) {
+    @include mixins.media-query(mobile) {
         font-size: 2.2rem;
         margin-bottom: 1.2rem;
     }
 
-    @include media-query(tablet) {
+    @include mixins.media-query(tablet) {
         font-size: 3.5rem;
     }
 
-    @include media-query(desktop) {
+    @include mixins.media-query(desktop) {
         font-size: 4.5rem;
     }
 }
@@ -30,16 +33,16 @@ h1 {
 h2 {
     font-size: 2.2rem;
 
-    @include media-query(mobile) {
+    @include mixins.media-query(mobile) {
         font-size: 1.8rem;
         margin-bottom: 1rem;
     }
 
-    @include media-query(tablet) {
+    @include mixins.media-query(tablet) {
         font-size: 2.5rem;
     }
 
-    @include media-query(desktop) {
+    @include mixins.media-query(desktop) {
         font-size: 3rem;
     }
 }

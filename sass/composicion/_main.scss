@@ -1,33 +1,35 @@
+@use '../varios/variables';
+@use '../varios/mixins'; 
+
 main {
     flex-grow: 1;
-    padding: $padding-base;
+    padding: variables.$padding-base;
     max-width: 1200px;
     margin: 2.5rem auto;
     display: grid;
     gap: 2.5rem;
     grid-template-columns: 1fr;
 
-    @include media-query(mobile) {
-        padding: $padding-base 1rem;
+    @include mixins.media-query(mobile) {
+        padding: variables.$padding-base 1rem;
         margin: 2rem auto;
         gap: 2rem;
     }
 
-    @include media-query(desktop) {
+    @include mixins.media-query(desktop) {
         gap: 3rem;
     }
 
     section {
-        @include section-base;
+        @include mixins.section-base;
 
         p {
-            @include media-query(desktop) {
+            @include mixins.media-query(desktop) {
                 font-size: 1.25rem;
             }
         }
     }
 
-    // Regla para img del foro (se mantiene aquí por su especificidad)
     .contenido-foro img {
         max-width: 400px;
         height: auto;
@@ -37,7 +39,7 @@ main {
         margin-left: auto;
         margin-right: auto;
 
-        @include media-query(mobile) {
+        @include mixins.media-query(mobile) {
             max-width: 90%;
         }
     }
