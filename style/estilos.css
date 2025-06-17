@@ -234,6 +234,11 @@ header nav ul li a:hover, header nav ul li a:focus {
   background-color: rgba(255, 255, 255, 0.15);
   transform: translateY(-3px);
 }
+header nav ul li a.pagina-activa {
+  background-color: #6DD5ED;
+  color: white;
+  font-weight: bold;
+}
 @media (max-width: 767px) {
   header nav ul li a {
     padding: 0.8rem 0.5rem;
@@ -463,6 +468,9 @@ footer .redes-sociales-footer img:hover {
   font-size: 1.05rem;
   transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
+.formulario-contacto-seccion input[type=text]::-moz-placeholder, .formulario-contacto-seccion input[type=email]::-moz-placeholder, .formulario-contacto-seccion input[name=asunto]::-moz-placeholder, .formulario-contacto-seccion textarea::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
 .formulario-contacto-seccion input[type=text]::placeholder,
 .formulario-contacto-seccion input[type=email]::placeholder,
 .formulario-contacto-seccion input[name=asunto]::placeholder,
@@ -683,6 +691,4 @@ footer .redes-sociales-footer img:hover {
     margin-left: auto;
     margin-right: auto;
   }
-}
-
-/*# sourceMappingURL=estilos.css.map */
+}/*# sourceMappingURL=estilos.css.map */
