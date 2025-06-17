@@ -1,7 +1,7 @@
 <h1 align="center">Hola 👋, soy Federico Galera</h1>
 <h3 align="center">Estudiante de Coderhouse com#69210</h3>
 
-- 🔭 Estoy trabajando en **mi 3ra Entrega**
+- 🔭 Estoy trabajando en **mi Entrega Final**
 
 - ⚡ Dato curioso **soy fan del Anime**
 
