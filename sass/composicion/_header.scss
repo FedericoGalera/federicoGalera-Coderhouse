@@ -3,181 +3,125 @@
 
 header {
     background: linear-gradient(to right, variables.$color-2, variables.$color-1);
+    padding: 0.75rem variables.$padding-base; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
     border-radius: 0 0 variables.$border-radius-base variables.$border-radius-base;
-    padding: variables.$padding-base;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     position: sticky;
     top: 0;
     z-index: 1000;
     width: 100%;
+}
 
-    @include mixins.media-query(mobile) {
-        padding: 0.75rem variables.$padding-base;
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px; 
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+a.logo img {
+    width: 110px; 
+    height: auto;
+    display: block; 
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+
+#nav-menu { 
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+
+    @include mixins.media-query(desktop) {
+        gap: 1.5rem;
     }
 
-    nav {
-        display: flex;
-        justify-content: space-between;
+   
+    @include mixins.media-query(mobile) {
+        display: flex; 
+        flex-direction: column;
         align-items: center;
-        max-width: 1200px;
-        margin: 0 auto;
-        flex-wrap: wrap;
-        flex-direction: row;
+        gap: 1rem;
+        
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        width: 100%;
+        
+        background: linear-gradient(to bottom, variables.$color-2, variables.$color-1);
+        padding: 0; 
+        
+       
+        max-height: 0; 
+        opacity: 0;
+        overflow: hidden; 
+        pointer-events: none; 
+        transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out, opacity 0.3s ease-in-out;
 
-        @include mixins.media-query(mobile) {
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: nowrap;
-            display: flex;
-            padding-bottom: 0;
+        &.active {
+            max-height: 50vh; 
+            opacity: 1;
+            padding: 1.5rem 0; 
+            pointer-events: auto;
         }
+    }
+}
 
-        @include mixins.media-query(tablet) {
-            flex-wrap: nowrap;
-            flex-direction: row;
+
+#nav-menu li a {
+    display: block;
+    text-decoration: none;
+    color: variables.$color-5;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem; 
+    padding: 0.6rem 1rem;
+    border-radius: variables.$border-radius-base;
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+    
+    &:hover,
+    &:focus {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: variables.$color-3;
+        transform: translateY(-2px); 
+    }
+
+    &.pagina-activa {
+        background-color: variables.$color-3;
+        color: variables.$color-1; 
+        transform: none; 
+
+        &:hover {
+            background-color: variables.$color-3; 
+            color: variables.$color-1;
         }
+    }
+}
 
-        a.logo {
-            @include mixins.flex-center;
 
-            @include mixins.media-query(mobile) {
-                order: unset;
-                margin-bottom: 0;
-            }
+.menu-toggle {
+    display: none; 
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: variables.$color-5;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 0.5rem;
+    
 
-            img {
-                width: 120px;
-                height: auto;
-                display: block;
-                transition: transform variables.$transition-speed ease;
-
-                &:hover {
-                    transform: scale(1.05);
-                }
-            }
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 2rem;
-            color: variables.$color-5;
-            cursor: pointer;
-            padding: 0.5rem;
-            z-index: 1001;
-            transition: color variables.$transition-speed ease;
-
-            &:hover {
-                color: variables.$color-3;
-            }
-
-            @include mixins.media-query(mobile) {
-                display: block;
-                position: static;
-                top: auto;
-                right: auto;
-                order: unset;
-            }
-        }
-
-        ul {
-            display: flex;
-            gap: 1.5rem;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            flex-direction: row;
-            align-items: center;
-
-            @include mixins.media-query(mobile) {
-                flex-direction: column;
-                width: 100%;
-                text-align: center;
-                margin-top: 0;
-                gap: 0.8rem;
-                background: linear-gradient(to right, variables.$color-2, variables.$color-1);
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                border-radius: variables.$border-radius-base;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-                overflow: hidden;
-                transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
-                max-height: 0;
-                opacity: 0;
-                pointer-events: none;
-                padding-top: 0;
-                padding-bottom: 0;
-
-                &.active {
-                    display: flex;
-                    max-height: 500px;
-                    opacity: 1;
-                    padding-top: 1.5rem;
-                    padding-bottom: 1.5rem;
-                    pointer-events: auto;
-                }
-            }
-
-            @include mixins.media-query(tablet) {
-                flex-direction: row;
-                width: auto;
-                margin-top: 0;
-                display: flex;
-                max-height: none;
-                position: static;
-                box-shadow: none;
-                background: none;
-                opacity: 1;
-                pointer-events: auto;
-                transition: none;
-                padding-top: 0;
-                padding-bottom: 0;
-            }
-
-            @include mixins.media-query(desktop) {
-                gap: 2.5rem;
-            }
-
-            li {
-                @include mixins.media-query(mobile) {
-                    width: 100%;
-                    padding: 0.3rem 0;
-                }
-
-                a {
-                    text-decoration: none;
-                    color: variables.$color-5;
-                    font-family: 'Montserrat', sans-serif;
-                    font-weight: 700;
-                    padding: 0.7rem 1.2rem;
-                    transition: color variables.$transition-speed ease, background-color variables.$transition-speed ease, transform variables.$transition-speed ease;
-                    border-radius: variables.$border-radius-base;
-                    display: block;
-
-                    &:hover,
-                    &:focus {
-                        color: variables.$color-3;
-                        background-color: rgba(255, 255, 255, 0.15);
-                        transform: translateY(-3px);
-                    }
-               
-                    &.pagina-activa {
-                        background-color: variables.$color-3;
-                        color: white;
-                        font-weight: bold;      
-                    }
-
-                    @include mixins.media-query(mobile) {
-                        padding: 0.8rem 0.5rem;
-                        border-radius: 0.5rem;
-                        font-size: 1.1rem;
-                    }
-                }
-            }
-        }
+    @include mixins.media-query(mobile) {
+        display: block;
     }
 }
