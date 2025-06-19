@@ -1,6 +1,8 @@
+// use de los scss para acceder a variables y mixins
 @use '../varios/variables';
 @use '../varios/mixins'; 
 
+// Estilos para Iframes dentro del Carrusel
 .carousel-item iframe {
     display: block;
     margin: 0 auto;
@@ -19,12 +21,13 @@
         height: 315px;
     }
 }
-
+// Estilos para los Contenedores de los Controles
 .carousel-control-prev,
 .carousel-control-next {
     width: 5%;
 }
 
+// Estilos para los Íconos de Control
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     background-color: rgba(0, 0, 0, 0.6);

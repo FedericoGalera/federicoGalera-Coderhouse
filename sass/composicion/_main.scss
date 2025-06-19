@@ -1,6 +1,8 @@
+// use de los scss para acceder a variables y mixins
 @use '../varios/variables';
 @use '../varios/mixins'; 
 
+// Contenedor Principal para el main
 main {
     flex-grow: 1;
     padding: variables.$padding-base;
@@ -20,6 +22,7 @@ main {
         gap: 3rem;
     }
 
+  // Estilos para las Secciones dentro del main
     section {
         @include mixins.section-base;
 
@@ -30,6 +33,7 @@ main {
         }
     }
 
+// Estilos específicos para la imagen en el html del foro
     .contenido-foro img {
         max-width: 400px;
         height: auto;

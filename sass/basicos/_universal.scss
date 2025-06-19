@@ -1,3 +1,4 @@
+// use de los scss para acceder a variables
 @use '../varios/variables';
 
 *, *::before, *::after {
@@ -6,6 +7,7 @@
     padding: 0;
 }
 
+// Define la apariencia y el comportamiento base para todo el documento
 body {
     background-image: url(../media/fondo.png);
     background-repeat: no-repeat;

@@ -1,11 +1,14 @@
+// use de los scss para acceder a variables y mixins
 @use '../varios/variables';
 @use '../varios/mixins'; 
 
+// Estilos Comunes para Secciones de Destacados
 .streams-destacados,
 .clips-destacados {
     margin-bottom: 2.5rem;
 }
 
+// Contenedor de las Columnas
 main:has(.streams-destacados, .clips-destacados) {
     @include mixins.media-query(desktop) {
         grid-template-columns: 1fr 1fr;
@@ -18,6 +21,7 @@ main:has(.streams-destacados, .clips-destacados) {
     }
 }
 
+// Sección de Streams Destacados
 .streams-destacados {
     @include mixins.media-query(desktop) {
         grid-column: 1 / 2;
@@ -32,6 +36,7 @@ main:has(.streams-destacados, .clips-destacados) {
     }
 }
 
+// Sección de Clips Destacados
 .clips-destacados {
     @include mixins.media-query(desktop) {
         grid-column: 2 / 3;
@@ -40,8 +45,8 @@ main:has(.streams-destacados, .clips-destacados) {
     h2 {
         @include mixins.media-query(desktop) {
             max-width: 750px;
-            margin-left: center;
-            margin-right: center;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 }

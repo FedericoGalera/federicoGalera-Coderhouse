@@ -1,6 +1,8 @@
+// use de los scss para acceder a variables y mixins
 @use '../varios/variables';
 @use '../varios/mixins'; 
 
+// Contenedor del Video de Presentación
 .video-presentacion {
     video {
         max-width: 100%;
@@ -26,6 +28,7 @@
     }
 }
 
+// Contenedor de las Columnas
 main:has(.presentacion, .video-presentacion) {
     @include mixins.media-query(tablet) {
         grid-template-columns: 1fr 1fr;
@@ -38,6 +41,7 @@ main:has(.presentacion, .video-presentacion) {
     }
 }
 
+// Contenedor del Texto de Presentación
 .presentacion {
     @include mixins.media-query(tablet) {
         grid-column: 1 / 2;

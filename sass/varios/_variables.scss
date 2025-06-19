@@ -1,15 +1,19 @@
+// Colores utilizados
 $color-1: #4A7D9D; // Azul Principal
 $color-2: #0A1C2C; // Azul Oscuro
 $color-3: #6DD5ED; // Acento
 $color-4: #A8DADC; // Azul Claro
 $color-5: #FFFFFF; // Blanco 
 
+// Padding, Margin y Border
 $padding-base: 1rem;
 $margin-base: 1rem;
 $border-radius-base: 0.75rem;
 
+// Transition de las animaciones
 $transition-speed: 0.3s;
 
+// Breakpoints para el responsive
 $mobile-breakpoint: 767px;
 $tablet-breakpoint: 768px;
 $desktop-breakpoint: 1024px;
